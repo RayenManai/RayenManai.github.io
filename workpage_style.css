@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+html{
+    background-color: black;
+    color: #FFFFFF;
+    font-family:"Source Code Pro", monospace ;
+    line-height: 1.5;
+    font-size: medium;
+    scroll-behavior:smooth;
+}
+
+.vcs_body{
+    margin-top: 3cm;
+    margin: auto;
+      width:70%;
+      padding: 7px;
+  }
+  .top_bar {
+    padding-left: 3px;
+    padding-right: 16px;
+    display:block;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    padding:0.5rem 0;
+    color: rgb(255, 255, 255);
+  }
+  .nav {
+    display: block;
+    padding: 16px 8px;
+  }
+  .nav li {
+    display: inline;
+    padding: 0.5cm;
+   
+  }
+ nav li a:hover{
+    color: rgba(255, 255, 255, 0.329);
+  }
+ nav li a{
+    color: white;
+    text-decoration: none;
+  }
+
+  strong{
+     color:rgb(22, 94, 84);
+      }
+@media(max-width:700px){
+  img{
+ max-width: 450px;  
+ max-height: 450px;
+ }
+}

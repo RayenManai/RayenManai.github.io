@@ -1,0 +1,394 @@
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+/* custom proprities */
+html{
+  scroll-behavior:smooth;
+}
+:root{
+    --ff-primary:"Source Sans Pro", sans-serif;
+    --ff-secondary :"Source Code Pro", monospace ;
+
+    --fw-reg : 300;
+    --fw-bold : 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent : #16e0bd;
+
+    --fs-h1 : 3rem;
+    --fs-h2 : 2.25rem;
+    --fs-h3 :1.25rem;
+    --fs-body : 1rem;
+}
+@media (min-width:800px){
+:root{
+    --fs-h1 : 4.5rem;
+    --fs-h2 : 3.75rem;
+    --fs-h3 :1.5rem;
+    --fs-body : 1.125rem;
+}
+}
+@media(max-width:700px){
+img{
+  max-width: 350px;
+  max-height: 450px;
+}
+}
+
+/* General Styles*/
+body{
+    background: black;
+    color: var(--clr-light);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+section{
+    padding: 5em 2em;
+}
+/* Typoghraphy */
+h1,
+h2,
+h3{
+    line-height: 1.1;
+    margin: 0;
+}
+h1{
+    font-size: var(--fs-h1);
+}
+h2{
+    font-size: var(--fs-h2);
+}
+h3{
+    font-size: var(--fs-h3);
+}
+img{
+    display: block;
+}
+
+@media (min-width:600px){
+    .intro{
+       display: grid;
+       width: min-content;
+       margin: 0 auto;
+       grid-column-gap: 1em;
+       grid-template-areas: 
+       "img title"
+       "img subtitle";
+       grid-template-columns: min-content max-content; 
+    }
+    .intro_img{
+        grid-area: img;
+        min-width: 250px;
+        max-width: 350px;
+        position: relative;
+        z-index: 2;
+       
+    }
+    .intro_subtitle{
+        align-self: start;
+        grid-column: 2;
+        grid-row: 2;
+        text-align: right;
+        position: relative; 
+        width: calc(100%+50em);
+        color: rgb(193, 207, 61);  
+    }
+}
+@media (min-width:800px){
+.studium_element {
+    margin: auto;
+    width: 60%;
+    padding:10px;
+    text-align: center;
+}
+.layout{
+  margin: auto;
+    width: 80%;
+    padding:10px;
+    text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2,1fr)
+}
+.layout2{
+  margin: auto;
+    width: 80%;
+    padding: 0;
+    text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3,1fr)
+}
+.skill_card{
+  margin-left: 1cm;
+  width: 100%;
+  padding:10px;
+}
+
+.studium_card{
+  margin: left;
+  margin-left: 4cm;
+  width: 70%;
+  padding:10px;
+
+}
+.loader-wrapper{
+  margin: auto;
+  
+    padding:10px;
+  width: 60px;
+  height: 60px;
+}
+.loader{
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #162534;
+  border-top-color: #4bc8eb ;
+  border-bottom-color: rgb(193, 207, 61);
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+}
+@keyframes rotate{
+  0%{
+    transform: scale(1) rotate(360deg);
+  }
+  50%{
+    transform: scale(.8) rotate(-360deg);
+  }
+  100%{
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+}
+.studium_element{
+  text-align: center;
+}
+.studium_card{
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  border-style:ridge;
+}
+.skill_card{
+  border-style:ridge;
+  text-align: center;
+  margin-top: 0.5cm;
+}
+.about_me {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    }
+    .section_title{
+        text-align: center;
+    }
+
+    .container{
+      text-align: center;
+    }
+
+    /*button animation inspired by https://codepen.io/sektowr/pen/vYKzxKe  */
+
+    @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+.know_more {
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+}
+.know_more:hover {
+  background: #d1e0e0;
+  color: #050801;  
+}
+a:nth-child(1) {
+  filter: hue-rotate(270deg);
+}
+a:nth-child(2) {
+  filter: hue-rotate(110deg);
+}
+a span {
+  position: absolute;
+  display: block;
+}
+a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+a span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.word1 {
+  font-family: tahoma;
+}
+.top_bar {
+  padding-left: 3px;
+  padding-right: 16px;
+  display:block;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  padding:0.5rem 0;
+  color: rgb(255, 255, 255);
+}
+.nav {
+  display: block;
+  padding: 16px 8px;
+}
+.nav li {
+  display: inline;
+  padding: 0.5cm;
+ 
+}
+a:hover{
+  color: rgba(255, 255, 255, 0.329);
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+.logo{
+  position: fixed;
+  left: 1cm;
+}
+
+.IT_Skills{
+  margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+.work{
+  text-align: center;
+  margin-top: 0.5cm;
+}
+
+
+footer{
+  height:auto;
+  width:100%;
+  padding-top: 100px;
+  color: white;
+}
+.footer-content{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction:column;
+  text-align: center;
+}
+
+.footer-content h3{
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+
+}
+.footer-content p{
+  max-width: 500px;
+  margin:10px auto;
+  line-height: 25x;
+  font-size:14px;
+}
+.socials {
+  list-style:none;
+  display: flex;
+  padding: 0;
+
+}
+.socials li{
+  margin:0 8px;
+}
+
+.socials a i{
+  font-size: 1.2rem;
+  transition: color .7s ease;
+}
+.socials a:hover i{
+  color:darkblue;
+}
+.footer-bottom{
+ margin-bottom: 2cm;
+  text-align: center;
+}
+.footer-bottom p{
+  font-size:15px;
+  word-spacing: 2px;
+}

@@ -10,29 +10,33 @@
         <link rel="stylesheet" href="css/main.css">
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
-        <header class="top_bar">
+      <header>
+        <nav class="top_bar">
             <div class="header__nav">
-              <nav class="nav">
-                <ul>
-                    <li><a href="#home" >☕ Rayen Manai</a></li>
-                  <li><a href="#about me" >About me</a></li>
-                  <li><a href="#Studium">Studium</a></li>
-                  <li><a href="#it skills">Skills & Work</a></li>
-                </ul>
-              </nav>
-              
+           <a href="#home" id="navbar_logo">Home</a>
+            <div class="nav_toggle" id ="mobile_menu">
+              <span class="bar"></span> <span class="bar"></span> <span class="bar"></span>
             </div>
-          </header>
+                <ul class="nav_menu">
+                  <li class="nav_item"><a href="#about me" >About me</a></li>
+                  <li class="nav_item"><a href="#Studium">Studies</a></li>
+                  <li class="nav_item"><a href="#it skills">Skills & Work</a></li>
+                </ul>    
+            </div>
+        </nav>
+        </header>
+        <script src="app.js"></script>
         
         <!-- Introduction-->
         <section class="intro" id="home">
             <h1>
                 <span>Hi, I am</span>
                 <div class="message">
-                  <div class="word1"> <span>Rayen Manai</span></div>
+                  <div class="word1"> Rayen Manai</div>
                 </div>
               </h1>
             <img class="intro_img" src="rayen.jpg">
@@ -42,12 +46,11 @@
           <!-- Studium-->
 <section class="studium" id="Studium">
     <h1 class="section_title">
-        <strong> Studium @TUM   </strong>
+        <strong> Studies @TUM   </strong>
    </h1>
    <div class="studium_element">
-   <h3>
-       
-           Studienplan Bachelor Informatik<a href="https://www.in.tum.de/fuer-studierende/bachelor-studiengaenge/informatik/studienplan/studienbeginn-ab-wise-202122/"> <br>( <i class="fa fa-link"></i> Link )
+   <h3>     
+    Curriculum <i class="fa-solid fa-table-list" fa-fw></i><a href="https://www.in.tum.de/fuer-studierende/bachelor-studiengaenge/informatik/studienplan/studienbeginn-ab-wise-202122/"> <br>( <i class="fa fa-link"></i> Link )
        </a>
    </h3>
   <p>Here i will be sharing some of the summaries i made to learn for the University exams</p>
@@ -71,7 +74,6 @@
     </a>
   </h4>
   <h4>
-
     Deutsch im Bachelorstudium C1 - Informatik: Wissenschaftliche Texte verstehen und schreiben
   </h4>
 </div>
@@ -93,12 +95,34 @@
   Grundlagenpraktikum: Rechnerarchitektur
 </h4>
 </div>
+<div class="studium_card">
+  <h4><strong>3.Semester</strong></h4>
+  <h4>
+    Grundlagen: Datenbanken
+  </h4>
+  <h4>
+    Grundlagen: Betriebssysteme und Systemsoftware
+  </h4>
+  <h4>
+    IT-Sicherheit
+  </h4>
+<h4>
+  Analysis für Informatik 
+</h4>
 </div>
-<div class="loader-wrapper">
-<div class="loader">
-  <div class="loader loader_inner">
-
-  </div>
+<div class="studium_card">
+  <h4><strong>4.Semester</strong></h4>
+  <h4>
+    Grundlagen: Rechnernetze und Verteilte Systeme
+  </h4>
+  <h4>
+    Einführung in die Theoretische Informatik
+  </h4>
+  <h4>
+    Diskrete Wahrscheinlichkeitstheorie
+  </h4>
+<h4>
+  Seminar</h4>
 </div>
 </div>
 
@@ -115,6 +139,37 @@
    <p>To be honest, it has all started when i was watching a youtube video of Chuck KeithNugget (chanel: <a href="https://www.youtube.com/c/NetworkChuck">NetworkChuck </a>) and he said : "Think about all the people that inspired you, the vlogs and the videos you watch, you could be that person for someone else and all it has to be is just one person you help and that's worth it"            So i am willing to share my experience, my opinions, my habits, some of my studying Stuff ...
        Also this is a small project for me, to practise the basic things i have learned.
    </p>
+
+   <div class="timeline">
+    <div class="outer">
+      <div class="card">
+        <div class="info">
+          <h3 class="title">2021 - 2024: Technical University Munich BSc Computer Science</h3>
+         <ul>
+            <li>Expected graduation in 2024</li>
+            <li>Current Grade: 1.6</li>
+            <li>Application Subject: Mathematics </li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">2016 - 2017: Leibniz University Hannover, Lower Saxony Preparatory Foundation</h3>
+        <ul><li>University Entrance Exam, Grade: 1.1</li>
+        <li>German language course</li></ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">2015 - 2016: Elite High School in Tunisia with focus on Mathematics</h3>
+         <ul><li>Top 10 of the year, Grade: 1.16 (Tunisia)</li>
+        <li>Top of the year in my region (Jendouba)</li>
+      <li>Awarded a Scholarship from the Tunisian Government in cooperation with the DAAD</li></ul>
+        </div>
+      </div>
+</div>
+</div>
+
    <div class="container">
    <a href="https://www.linkedin.com/in/rayen-manai-24595a236/" class="know_more" >
     <span></span>
@@ -136,23 +191,24 @@
      <div class="layout2">
        <div class="skill_card">
       <h4>
-        Web development <br> html, css, javaScript
+        Web Development <br><i class="fa-solid fa-code "></i><br> HTML, CSS, javaScript
       </h4>
     </div>
     <div class="skill_card">
       <h4>
-        Software development<br> java, git
+        Software Development <br> <i class="fa-solid fa-code-branch "></i><br> java, C, git
       </h4>
     </div>
     <div class="skill_card">
       <h4>
-        Computer Architecture <br> x86 Assembly, VHDL
+        Computer Architecture <br><i class="fa-solid fa-microchip "></i> <br> x86 Assembly, VHDL
       </h4>
   </div>
      </div>
   <div class="work">
-     <h4><strong>  Introduction to VCS & Git   <i class="fa fa-github"></i><a href="vcs.html"> <br>( <i class="fa fa-link"></i> Link )</strong></h4></a>
-  </div>
+    <div class="work_card"><h4><strong>  Introduction to VCS & Git   <i class="fa fa-github"></i><a href="vcs.html"> <br>( <i class="fa fa-link"></i> Link )</strong></h4></a></div>  
+    <div class="work_card"><h4><strong>  Ferienakademie 2022  <a href="https://github.com/RayenManai/Deductive-Verification-Talk-Slides"> <br>( <i class="fa fa-link"></i> Talk slides link )</strong></h4></a></div>
+    </div>
 </section>
 
 <!-- footer-->

@@ -257,7 +257,7 @@ grid-area: description;
 .layout{
     padding-top: 2cm;
     margin: auto;
-    width: 80%;
+    width: 100%;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2,1fr);

@@ -41,7 +41,7 @@ img{
 body{
     background: black;
     color: var(--clr-light);
-    margin: 0; /*maybe useless*/
+    margin: 0;
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
@@ -66,7 +66,7 @@ h3{
     font-size: var(--fs-h3);
 }
 img{
-    display: block; /*maybe useless*/
+    display: block; 
 }
 
 .top_bar {
@@ -188,11 +188,9 @@ background-color: rgb(31, 29, 29);
 }
 .word1 {
 grid-area: title;
-
 }
 .descritpion {
 grid-area: description;
-
 }
 .timeline {
   display: inline;
@@ -223,7 +221,7 @@ grid-area: description;
        "img subtitle2"
        "img description";
        grid-template-columns:min-content max-content; 
-       padding-bottom: 25rem;
+       padding-bottom: 5rem;
     }
     .intro_img{
         grid-area: img;
@@ -250,9 +248,8 @@ grid-area: description;
     }
     
 .studium_element {
-  /*maybe useless*/
     margin: auto;
-    width: 60%;
+    width: 100%;
     padding:10px 0px 0px 10px;
     text-align: center;
 }
@@ -288,7 +285,6 @@ grid-area: description;
   font-family: monospace;
 }
 }
-
 .studium_element{
   text-align: center;
   padding-bottom: 10px;
@@ -306,11 +302,11 @@ grid-area: description;
 }
 .about_me {
     margin: auto;
-    width: 80%;
+    width: 90%;
     }
     .experience{
     margin: auto;
-    width: 80%;
+    width: 90%;
     }
 .section_title{
       text-align: center;
@@ -334,8 +330,8 @@ a{
 
 .IT_Skills{
   margin: auto;
-    width: 60%;
-    padding: 10px;
+  width: 90%;
+  padding: 10px;
 }
 .work{
   text-align: center;

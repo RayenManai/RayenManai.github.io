@@ -13,10 +13,8 @@ html{
 }
 
 .body{
-    margin-top: 3cm;
-    margin: auto;
+    margin: 3cm auto auto auto;
     width:80%;
-    padding: 7px;
   }
   .top_bar {
     font-size: 1.2rem;
@@ -48,9 +46,10 @@ html{
   strong{
      color:rgb(22, 94, 84);
       }
-@media(max-width:700px){
+    h1{
+        text-align: center;
+      }
   img{
- max-width: 450px;  
- max-height: 450px;
- }
-}
+        display: block;
+        margin: auto;
+  }

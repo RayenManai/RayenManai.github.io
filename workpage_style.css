@@ -13,8 +13,8 @@ html{
 }
 
 .body{
-    margin: 3cm auto auto auto;
-    width:80%;
+    margin: auto;
+    width:90%;
   }
   .top_bar {
     font-size: 1.2rem;
@@ -52,4 +52,6 @@ html{
   img{
         display: block;
         margin: auto;
+        width: 100%;
+        max-width: 600px;
   }

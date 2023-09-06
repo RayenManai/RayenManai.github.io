@@ -22,7 +22,7 @@ html{
     --fs-h3 :1.25rem;
     --fs-body : 1rem;
 }
-@media (min-width:800px){
+@media (min-width:1100px){
 :root{
     --fs-h1 : 4.5rem;
     --fs-h2 : 3.75rem;
@@ -30,7 +30,7 @@ html{
     --fs-body : 1.125rem;
 }
 }
-@media(max-width:700px){
+@media(max-width:1100px){
 img{
   max-width: 350px;
   max-height: 450px;
@@ -96,7 +96,7 @@ background-color: rgb(31, 29, 29);
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1100px) {
   
   .nav_menu{
     display: grid;
@@ -197,7 +197,7 @@ grid-area: description;
   width: 100%;
 }
 
-.container2 {
+.container {
   margin: auto;
   width: 100%;
   display: grid;
@@ -207,7 +207,7 @@ grid-area: description;
 }
 }
 
-@media (min-width:700px){
+@media (min-width:1100px){
     .intro{
        padding-top: 15rem;
        display: grid;
@@ -256,11 +256,11 @@ grid-area: description;
 
 .layout{
     padding-top: 2cm;
-    margin: auto;
     width: 100%;
     text-align: center;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
 }
 
 .layout2{
@@ -275,7 +275,7 @@ grid-area: description;
   padding:10px;
 }
 
-.container2 {
+.container {
   margin: auto;
   width: 100%;
   display: grid;
@@ -343,7 +343,7 @@ a{
 .timeline {
   margin: auto;
   padding: 10px;
-  width: 40%;
+  width: 70%;
 }
 
 /* Outer Layer with the timeline border */

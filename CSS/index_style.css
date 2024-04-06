@@ -205,6 +205,11 @@ grid-area: description;
   row-gap: 1cm;
   font-family: monospace;
 }
+.cover {
+  position: relative;
+  width: 100%;
+  padding: 0px 30px;
+}
 }
 
 @media (min-width:1100px){
@@ -254,15 +259,6 @@ grid-area: description;
     text-align: center;
 }
 
-.layout{
-    padding-top: 2cm;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
-}
-
 .layout2{
   margin: auto;
   width: 100%;
@@ -289,14 +285,9 @@ grid-area: description;
   text-align: center;
   padding-bottom: 10px;
 }
-.studium_card{
-  margin: auto;
-  width: 60%;
-  padding: 10px;
-  border-style:ridge;
-}
 .skill_card{
   border-style:ridge;
+  border-color:rgb(71, 112, 145);
   text-align: center;
   margin-top: 0.5cm;
 }
@@ -486,4 +477,41 @@ footer{
   font-size: 0.8em;
   margin: 10px;
   margin-bottom: auto;
+}
+.cover {
+  position: relative;
+  width: 80%;
+  padding: 0px 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.layout {
+  width: 100%;
+  padding: 40px 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.studium_card {
+  padding: 10px;
+  align-items: center;
+  min-width: 250px;
+  margin: 1px 10px;
+  border: 1px solid rgb(71, 112, 145);
+}
+.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }

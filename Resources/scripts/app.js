@@ -14,46 +14,38 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("copyright").innerHTML = "&copy;" + yearRange + " Rayen Manai";
 });
 
-function leftScroll() {
-    const scrollImages = document.querySelector(".layout");
-    scrollImages.scrollBy({
-        left: -200,
-        behavior: "smooth"
-    });
-}
-
-function rightScroll() {
-    const scrollImages = document.querySelector(".layout");
-    scrollImages.scrollBy({
-        left: 200,
-        behavior: "smooth"
-    });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-    const scrollImages = document.querySelector(".layout");
-    const scrollLength = scrollImages.scrollWidth - scrollImages.clientWidth;
+    const scrollContainer = document.querySelector(".layout");
+    const scrollWidth = scrollContainer.scrollWidth;
+    const cardWidth = scrollContainer.querySelector(".studium_card").offsetWidth;
+    const numCards = Math.floor(scrollWidth / cardWidth);
+    const scrollStep = cardWidth;
+
     const leftButton = document.querySelector(".left");
     const rightButton = document.querySelector(".right");
 
-    function checkScroll() {
-        const currentScroll = scrollImages.scrollLeft;
-        if (currentScroll === 0) {
-            leftButton.setAttribute("disabled", "true");
-            rightButton.removeAttribute("disabled");
-        } else if (currentScroll === scrollLength) {
-            rightButton.setAttribute("disabled", "true");
-            leftButton.removeAttribute("disabled");
-        } else {
-            leftButton.removeAttribute("disabled");
-            rightButton.removeAttribute("disabled");
-        }
+    function scrollLeft() {
+        scrollContainer.scrollBy({
+            left: -scrollStep,
+            behavior: "smooth"
+        });
     }
 
-    scrollImages.addEventListener("scroll", checkScroll);
-    window.addEventListener("resize", checkScroll);
-    checkScroll();
+    function scrollRight() {
+        scrollContainer.scrollBy({
+            left: scrollStep,
+            behavior: "smooth"
+        });
+    }
 
-    leftButton.addEventListener("click", leftScroll); 
-    rightButton.addEventListener("click", rightScroll); 
+    function updateScrollButtons() {
+        const scrollPosition = scrollContainer.scrollLeft;
+    }
+
+    scrollContainer.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
+    updateScrollButtons();
+
+    leftButton.addEventListener("click", scrollLeft);
+    rightButton.addEventListener("click", scrollRight);
 });

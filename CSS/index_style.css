@@ -96,121 +96,6 @@ background-color: rgb(31, 29, 29);
 }
 
 
-@media screen and (max-width: 1100px) {
-  
-  .nav_menu{
-    display: grid;
-    grid-template-columns: auto;
-    margin: 0;
-    width: 100%;
-    position: absolute;
-    top: -1000px;
-    opacity: 0;
-    transition: all 0.5s ease;
-    height: 50vh;
-    z-index: -1;
-  }
-
-  .nav_menu.active {
-    top: 100%;
-    opacity: 100%;
-    transition: all 0.5s ease;
-    z-index: 99;
-    height: 50vh;
-    font-size: 1.6rem;
-    background-color: black;
-  }
-
-  #navbar_logo{
-    padding-left: 25px;
-  }
-
-  .nav_toggle .bar{
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-  }
-  .nav_item{
-    width: 100%;
-    text-align: center;
-    display: table;
-  }
-  #mobile_menu{
-    position: absolute;
-    top: 20%;
-    right: 5%;
-    transform: translate(5%,20%);
-  }
-.nav_toggle .bar {
-    display: block;
-    cursor: pointer;
-    background-color:#fff
-}
-#mobile_menu.is-active .bar:nth-child(2) {
-  opacity: 0;
-}
-#mobile_menu.is-active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-#mobile_menu.is-active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}  
-.intro{
-  display: grid;
-  width: min-content;
-  margin: 0 auto;
-  grid-row-gap: 1.5em;
-  grid-template-areas: 
-  "title"
-  "subtitle"
-  "subtitle2"
-  "img"
-  "description";
-  grid-template-columns:min-content; 
-}
-.intro_img{
-   grid-area: img;
-   min-width: 250px;
-   max-width: 350px;
-   margin-top: 20px;
-   border-radius: 50%;
-  box-shadow: rgba(26, 24, 24, 0.25) 0px 5px 10px 2px;
-
-}
-.intro_subtitle{
-   grid-area: subtitle;
-   color: rgb(193, 207, 61);  
-}
-.intro_subtitle2{
-  grid-area: subtitle2;
-  color: rgb(71, 112, 145);  
-}
-.word1 {
-grid-area: title;
-}
-.descritpion {
-grid-area: description;
-}
-.timeline {
-  display: inline;
-  width: 100%;
-}
-
-.container {
-  margin: auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1,1fr);
-  row-gap: 1cm;
-  font-family: monospace;
-}
-.cover {
-  position: relative;
-  width: 100%;
-  padding: 0px 30px;
-}
-}
 
 @media (min-width:1100px){
     .intro{
@@ -480,7 +365,7 @@ footer{
 }
 .cover {
   position: relative;
-  width: 80%;
+  width: 70%;
   padding: 0px 30px;
   margin-left: auto;
   margin-right: auto;
@@ -496,11 +381,14 @@ footer{
   -webkit-overflow-scrolling: touch;
 }
 .studium_card {
+  flex: 0 0 48%; 
+  scroll-snap-align: start;
+  text-align: center;
   padding: 10px;
   align-items: center;
-  min-width: 250px;
   margin: 1px 10px;
   border: 1px solid rgb(71, 112, 145);
+  -webkit-overflow-scrolling: touch;
 }
 .left {
   position: absolute;
@@ -514,4 +402,132 @@ footer{
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1100px) {
+  
+  .nav_menu{
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    height: 50vh;
+    z-index: -1;
+  }
+
+  .nav_menu.active {
+    top: 100%;
+    opacity: 100%;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 50vh;
+    font-size: 1.6rem;
+    background-color: black;
+  }
+
+  #navbar_logo{
+    padding-left: 25px;
+  }
+
+  .nav_toggle .bar{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .nav_item{
+    width: 100%;
+    text-align: center;
+    display: table;
+  }
+  #mobile_menu{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%,20%);
+  }
+.nav_toggle .bar {
+    display: block;
+    cursor: pointer;
+    background-color:#fff
+}
+#mobile_menu.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+#mobile_menu.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#mobile_menu.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}  
+.intro{
+  display: grid;
+  width: min-content;
+  margin: 0 auto;
+  grid-row-gap: 1.5em;
+  grid-template-areas: 
+  "title"
+  "subtitle"
+  "subtitle2"
+  "img"
+  "description";
+  grid-template-columns:min-content; 
+}
+.intro_img{
+   grid-area: img;
+   min-width: 250px;
+   max-width: 350px;
+   margin-top: 20px;
+   border-radius: 50%;
+  box-shadow: rgba(26, 24, 24, 0.25) 0px 5px 10px 2px;
+
+}
+.intro_subtitle{
+   grid-area: subtitle;
+   color: rgb(193, 207, 61);  
+}
+.intro_subtitle2{
+  grid-area: subtitle2;
+  color: rgb(71, 112, 145);  
+}
+.word1 {
+grid-area: title;
+}
+.descritpion {
+grid-area: description;
+}
+.timeline {
+  display: inline;
+  width: 100%;
+}
+
+.container {
+  margin: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  row-gap: 1cm;
+  font-family: monospace;
+}
+.cover {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.layout {
+  flex-direction: column; 
+}
+
+.studium_card {
+  width: 100%; 
+  margin: 10px 0;
+}
+
+.left, .right {
+  display: none; 
+}
 }

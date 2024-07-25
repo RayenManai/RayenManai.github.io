@@ -405,6 +405,24 @@ footer{
   transform: translateY(-50%);
 }
 
+.thesis-box {
+  border-radius: 8px;
+  border: 1px solid rgb(71, 112, 145);
+  padding: 20px;
+  margin-top: 30px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.thesis-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.thesis-link i {
+    margin-right: 5px;
+}
 @media screen and (max-width: 1100px) {
   
   .nav_menu{

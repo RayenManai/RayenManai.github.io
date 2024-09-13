@@ -152,10 +152,19 @@ background-color: rgb(31, 29, 29);
     text-align: center;
 }
 
+.cover {
+  position: relative;
+  width: 50%;
+  padding: 0px 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .studium_card{
   height: 400px;
   width: 100%;
 }
+
 
 .layout2{
   margin: auto;
@@ -372,14 +381,6 @@ footer{
   margin: 10px;
   margin-bottom: auto;
 }
-.cover {
-  position: relative;
-  width: 70%;
-  padding: 0px 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 
 .thesis-box {
   border-radius: 8px;
@@ -510,8 +511,11 @@ grid-area: description;
 }
 
 .studium_card {
-  height: 570px;
-  width: 98%;
+  height: 400px;
+  width: 100%;
+}
+.cover {
+  width: 100%;
 }
 }
 .cover {
@@ -523,7 +527,7 @@ grid-area: description;
 
 .layout {
   width: 100%;
-  padding: 40px 0px;
+  padding: 10px 10px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
@@ -557,16 +561,8 @@ button {
 }
 
 button.left, button.right {
-  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
 }
 
-button.left {
-  left: 0;
-}
-
-button.right {
-  right: 0;
-}

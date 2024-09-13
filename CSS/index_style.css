@@ -97,46 +97,53 @@ background-color: rgb(31, 29, 29);
 }
 
 
-
-@media (min-width:1100px){
-    .intro{
-       padding-top: 15rem;
-       display: grid;
-       width: min-content;
-       margin: 0 auto;
-       grid-column-gap: 1em;
-       grid-row-gap: 1.1em;
-       grid-template-areas: 
-       "img title"
-       "img subtitle"
-       "img subtitle2"
-       "img description";
-       grid-template-columns:min-content max-content; 
-       padding-bottom: 5rem;
-    }
-    .intro_img{
-        grid-area: img;
-        min-width: 250px;
-        max-width: 400px;
-        margin-top: 20px;
-        border-radius: 50%;
-        box-shadow: rgba(26, 24, 24, 0.25) 0px 5px 10px 2px;
-
-    }
-    .intro_subtitle{
-        grid-area: subtitle;
-        color: rgb(193, 207, 61);  
-    }
-    .intro_subtitle2{
+@media (min-width: 1100px) {
+  .intro {
+      padding-top: 15rem;
+      display: grid;
+      width: 60%;
+      margin: 0 auto;
+      grid-template-areas:
+          "img title"
+          "img subtitle"
+          "img subtitle2"
+          "img description";
+      grid-column-gap: 1em;
+      grid-row-gap: 1.1em;
+      padding-bottom: 5rem;
+  }
+  
+  .intro_img {
+      grid-area: img;
+      min-width: 250px;
+      max-width: 400px;
+      margin-top: 20px;
+      border-radius: 50%;
+      box-shadow: rgba(26, 24, 24, 0.25) 0px 5px 10px 2px;
+  }
+  
+  .intro_subtitle {
+      grid-area: subtitle;
+      color: rgb(193, 207, 61);
+  }
+  
+  .intro_subtitle2 {
       grid-area: subtitle2;
-      color: rgb(71, 112, 145);  
-    }
-    .word1 {
+      color: rgb(71, 112, 145);
+  }
+  
+  .name {
       grid-area: title;
-    }
-    .descritpion {
+  }
+  
+  .description {
       grid-area: description;
-    }
+  }
+  
+  .description p {
+      margin: 0;
+  }
+
     
 .studium_element {
     margin: auto;
@@ -145,16 +152,17 @@ background-color: rgb(31, 29, 29);
     text-align: center;
 }
 
+.studium_card{
+  height: 400px;
+  width: 100%;
+}
+
 .layout2{
   margin: auto;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3,1fr);
   column-gap: 1cm;
-}
-.skill_card{
-  width: 100%;
-  padding:10px;
 }
 
 .container {
@@ -176,6 +184,8 @@ background-color: rgb(31, 29, 29);
   border-color:rgb(71, 112, 145);
   text-align: center;
   margin-top: 0.5cm;
+  width: 100%;
+  padding:10px;
 }
 .about_me {
     margin: auto;
@@ -339,9 +349,7 @@ footer{
 .card__image {
   height: 200px;
   width: 300px;
-  border: 2px solid #272133;
   margin-top: 20px;
-  box-shadow: 0 10px 50px rgba(235, 25, 110, 1);
 }
 
 .btn {
@@ -367,43 +375,11 @@ footer{
 .cover {
   position: relative;
   width: 70%;
-  padding: 0px 30px;
+  padding: 0px 40px;
   margin-left: auto;
   margin-right: auto;
 }
-.layout {
-  width: 100%;
-  padding: 40px 0px;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-.studium_card {
-  flex: 0 0 48%; 
-  scroll-snap-align: start;
-  text-align: center;
-  padding: 10px;
-  align-items: center;
-  margin: 1px 10px;
-  border: 1px solid rgb(71, 112, 145);
-  -webkit-overflow-scrolling: touch;
-}
-.left {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-.right {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 .thesis-box {
   border-radius: 8px;
@@ -532,21 +508,65 @@ grid-area: description;
   row-gap: 1cm;
   font-family: monospace;
 }
-.cover {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+
+.studium_card {
+  height: 570px;
+  width: 98%;
 }
+}
+.cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
 .layout {
-  flex-direction: column; 
+  width: 100%;
+  padding: 40px 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .studium_card {
-  width: 100%; 
-  margin: 10px 0;
+  display: none; /* Hide all cards by default */
+  border-radius: 8px;
+  border: 1px solid rgb(71, 112, 145);
+  color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.left, .right {
-  display: none; 
+.studium_card.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
 }
+
+button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button.left, button.right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+button.left {
+  left: 0;
+}
+
+button.right {
+  right: 0;
 }

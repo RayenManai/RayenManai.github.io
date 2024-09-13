@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial scale=1.0">
-        <title>
-          🐧 Rayen Portfolio
-        </title>
-        <link rel="stylesheet" href="CSS/index_style.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-          
-      </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐧 Rayen Portfolio</title>
+    <link rel="stylesheet" href="CSS/index_style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+
     <body>
       <header>
         <nav class="top_bar">
@@ -33,25 +31,24 @@
             </div>
         </nav>
         </header>
-        <script src="Resources/scripts/app.js"></script>
         
-        <!-- Introduction-->
-        <section class="intro" id="home">
-            <h1>
-                <span>Hi, I am</span>
-                  <div class="word1"> Rayen Manai</div>
-              </h1>
-            <img class="intro_img" src="/Resources/home-page-pictures/rayen2.jpg">
-           <h3 class="intro_subtitle">CS student at the Technical University of Munich</h3>
-           <h3 class="intro_subtitle2">Software Developer working student at <a href="https://www.adesso.de">adesso SE</a></h3>
-           <div class="description"> 
-            <p>
-            Welcome to my digital realm, where bits and bytes come to life <br>and algorithms dance in harmony.
-            <br> With a curious mind and a drive to excel, I am committed to <br>pushing boundaries, exploring new frontiers, and harnessing the power <br> of innovation.
-           Join me on this journey as I showcase my endeavors, projects,<br>and aspirations in the world of computer science.
-          </p>
-           </div>
-        </section>
+        <!-- Introduction -->
+<section class="intro" id="home">
+  <h1>
+      <span>Hi, I am</span>
+      <div class="name">Rayen Manai</div>
+  </h1>
+  <img class="intro_img" src="/Resources/home-page-pictures/rayen2.jpg" alt="Rayen Manai">
+  <h3 class="intro_subtitle">CS Student at the Technical University of Munich</h3>
+  <h3 class="intro_subtitle2">Software Developer Working Student at <a href="https://www.adesso.de" target="_blank" rel="noopener noreferrer">adesso SE</a></h3>
+  <div class="description">
+      <p>
+          Welcome to my digital realm, where bits and bytes come to life and algorithms dance in harmony. With a curious mind and a drive to excel, I am committed to pushing boundaries, exploring new frontiers, and harnessing the power of innovation.
+          Join me on this journey as I showcase my endeavors, projects, and aspirations in the world of computer science.
+      </p>
+  </div>
+</section>
+
 
           <!-- Studium-->
 <section class="studium" id="Studium">
@@ -67,11 +64,11 @@
    </h3>
 </div>
 <div class="cover">
-  <button class="left" onclick="leftScroll()">
+  <button class="left" onclick="showPrevCard()">
     <i class="fas fa-angle-double-left"></i>
   </button>
 <div class="layout">
-<div class="studium_card">
+<div class="studium_card active">
   <h4><strong style="color:bisque;">1.Semester</strong></h4>
   <h4>
     Diskrete Strukturen 
@@ -172,7 +169,7 @@
 </h4>
 </div>
 </div>
-<button class="right" onclick="rightScroll()">
+<button class="right" onclick="showNextCard()">
   <i class="fas fa-angle-double-right"></i>
 </button>
 </div>
@@ -190,7 +187,7 @@
     practical implementation to demonstrate its effectiveness.
   </p>
   <div class="thesis-links">
-      <a href="#" target="_blank" class="thesis-link">
+      <a href="#" class="thesis-link">
           <i class="fa fa-file-pdf"></i> Thesis Document
       </a>
       <a href="Subpages/bachelor-thesis.html" class="thesis-link">
@@ -435,4 +432,5 @@
 
 </footer>
 </body>
+<script src="Resources/scripts/app.js"></script>
 </html>

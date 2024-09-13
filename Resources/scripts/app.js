@@ -14,38 +14,28 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("copyright").innerHTML = "&copy;" + yearRange + " Rayen Manai";
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const scrollContainer = document.querySelector(".layout");
-    const scrollWidth = scrollContainer.scrollWidth;
-    const cardWidth = scrollContainer.querySelector(".studium_card").offsetWidth;
-    const numCards = Math.floor(scrollWidth / cardWidth);
-    const scrollStep = cardWidth;
+let currentCardIndex = 0;
+const cards = document.querySelectorAll('.studium_card');
 
-    const leftButton = document.querySelector(".left");
-    const rightButton = document.querySelector(".right");
-
-    function scrollLeft() {
-        scrollContainer.scrollBy({
-            left: -scrollStep,
-            behavior: "smooth"
-        });
+function showCard(index) {
+  cards.forEach((card, i) => {
+    if (i === index) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
     }
+  });
+}
 
-    function scrollRight() {
-        scrollContainer.scrollBy({
-            left: scrollStep,
-            behavior: "smooth"
-        });
-    }
+function showNextCard() {
+  currentCardIndex = (currentCardIndex + 1) % cards.length;
+  showCard(currentCardIndex);
+}
 
-    function updateScrollButtons() {
-        const scrollPosition = scrollContainer.scrollLeft;
-    }
+function showPrevCard() {
+  currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
+  showCard(currentCardIndex);
+}
 
-    scrollContainer.addEventListener("scroll", updateScrollButtons);
-    window.addEventListener("resize", updateScrollButtons);
-    updateScrollButtons();
-
-    leftButton.addEventListener("click", scrollLeft);
-    rightButton.addEventListener("click", scrollRight);
-});
+// Initially show the first card
+showCard(currentCardIndex);

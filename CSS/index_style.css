@@ -99,56 +99,49 @@ background-color: rgb(31, 29, 29);
 
 @media (min-width: 1100px) {
   .intro {
-      padding-top: 15rem;
-      display: grid;
-      width: 60%;
-      margin: auto;
-      grid-template-areas:
-          "img title"
-          "img subtitle"
-          "img subtitle2"
-          "img description";
-      grid-column-gap: 1em;
-      grid-row-gap: 1.1em;
-      padding-bottom: 5rem;
-  }
-  .intro_title{
-    margin: auto;
-  }
-  .intro_img {
+    height: 100vh;                         
+    display: flex;                         
+    align-items: center;                   
+    justify-content: center;               
+    text-align: center;                      
+}
+
+.intro_content {
+    display: grid;                         
+    grid-template-areas:                   
+        "img title"
+        "img subtitle"
+        "img subtitle2"
+        "img description";
+    width: 60%;  
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgb(71, 112, 145);
+}
+
+.intro_img {
     grid-area: img;
+    margin: auto auto;
     min-width: 250px;
     max-width: 400px;
-    margin-top: 20px;
     border-radius: 50%;
     box-shadow: rgba(26, 24, 24, 0.25) 0px 5px 10px 2px;
-  }
-  
-  .intro_subtitle {
-    margin: auto;
+}
+
+.intro_subtitle {
     grid-area: subtitle;
     color: rgb(193, 207, 61);
-  }
-  
-  .intro_subtitle2 {
-    margin: auto;
+}
+
+.intro_subtitle2 {
     grid-area: subtitle2;
     color: rgb(71, 112, 145);
-  }
-  
-  .name {
-      grid-area: title;
-  }
-  
-  .description {
-      grid-area: description;
-  }
-  
-  .description p {
-      margin: 0;
-  }
+}
 
-    
+.description {
+    grid-area: description;
+}
+   
 .studium_element {
     margin: auto;
     width: 100%;
@@ -473,23 +466,31 @@ footer{
 #mobile_menu.is-active .bar:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }  
-.intro{
-  display: grid;
-  width: min-content;
+.intro {
+  height: 100vh;                         
+  display: flex;                         
+  align-items: center;                   
+  justify-content: center;               
+  text-align: center;                   
+  width: 80%;
   margin: auto;
-  grid-row-gap: 1.5em;
-  grid-template-areas: 
-  "title"
-  "subtitle"
-  "subtitle2"
-  "img"
-  "description";
+}
+
+.intro_content {
+  display: grid;                         
+  grid-template-areas:                   
+      "title"
+      "subtitle"
+      "subtitle2"
+      "img"
+      "description";
+  border-radius: 8px;
+  padding: 0 10px;
+  border: 1px solid rgb(71, 112, 145);
 }
   
-.intro_title{
-  margin: auto;
-}
 .intro_img{
+  margin: auto;
    grid-area: img;
    min-width: 250px;
    max-width: 250px;
@@ -498,13 +499,10 @@ footer{
   box-shadow: rgba(26, 24, 24, 0.25) 0px 5px 10px 2px;
 }
 .intro_subtitle{
-  margin: auto;
    grid-area: subtitle;
    color: rgb(193, 207, 61);  
 }
 .intro_subtitle2{
-    margin: auto;
-
   grid-area: subtitle2;
   color: rgb(71, 112, 145);  
 }
@@ -590,9 +588,7 @@ button.left, button.right {
 .intro_title {
   font-family: 'Courier New', Courier, monospace; 
   color: #00ff00;
-  padding: 10px;
   border-radius: 8px; 
-  display: inline-block;
 }
 
 .terminal i {

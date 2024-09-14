@@ -21,10 +21,10 @@
               <span class="bar"></span> <span class="bar"></span> <span class="bar"></span>
             </div>
                 <ul class="nav_menu">
-                  <li class="nav_item"><a href="#Studium">Studies</a></li>
-                  <li class="nav_item"><a href="#about me" >About me</a></li>
                   <li class="nav_item"><a href="#Experience">Experience</a></li>
+                  <li class="nav_item"><a href="#Studium">Education</a></li>
                   <li class="nav_item"><a href="#it skills">Skills & Projects</a></li>
+                  <li class="nav_item"><a href="#about me" >About me</a></li>
                   <li class="nav_item"><a href="#socials">Contact</a></li>
                   <!-- <li class="nav_item"><a href="#socials">CV</a></li> -->
                 </ul>    
@@ -34,10 +34,12 @@
         
         <!-- Introduction -->
 <section class="intro" id="home">
-  <h1>
-      <span>Hi, I am</span>
-      <div class="name">Rayen Manai</div>
-  </h1>
+  <h4 class="intro_title">
+    <span class="terminal">
+      <i class="fa-solid fa-terminal"></i> whoami
+    </span>
+    <div class="name">Rayen Manai</div>
+  </h4>
   <img class="intro_img" src="/Resources/home-page-pictures/rayen2.jpg" alt="Rayen Manai">
   <h3 class="intro_subtitle">CS Student at the Technical University of Munich</h3>
   <h3 class="intro_subtitle2">Software Developer Working Student at <a href="https://www.adesso.de" target="_blank" rel="noopener noreferrer">adesso SE</a></h3>
@@ -49,19 +51,98 @@
   </div>
 </section>
 
+<!-- Experience -->
+<section class="experience" id="Experience">
+  <h1 class="experience_title">
+     <strong>Work Experience</strong>
+ </h1>
+ <div class="timeline">
+  <div class="outer">
+    <div class="card">
+      <div class="info">
+        <h3 class="title">01/2024 - present: Working Student: Software Developer at adesso SE</h3>
+        <ul>
+          <li>Fullstack development and testing responsibilities within a Scrum methodology framework</li>
+          <li>Completion of various full stack development trainings: Spring Boot, Angular, Docker</li>
+        </ul>
+      </div>
+    </div>
 
-          <!-- Studium-->
-<section class="studium" id="Studium">
-    <h2 class="section_title">
+    <div class="card">
+      <div class="info">
+        <h3 class="title">06/2023 - 12/2023: Working Student: IT Administration at TAP SG</h3>
+       <ul>
+          <li>IT Support: Troubleshooting and providing technical support</li>
+          <li>Deployment of Security Policies</li>
+          <li>M365 Tenant Administration</li>
+          <li>IT Documentation</li>
+          <li>Creating and managing system permissions</li>
+          <li>Monitoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="info">
+        <h3 class="title">10/2022 - 04/2023: Assistant Teacher, Technical University of Munich, Discrete Structures</h3>
+      <ul><li>Weekly tutorials</li>
+        <li>Homework correction</li>
+      <li>Exam correction</li></ul>
+      </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+<!-- Studium-->
+<section id="Studium">
+  <div class="studium">
+  <h1 class="experience_title">
+    <strong> 
+     Education
+    </strong>
+</h1>
+<div class="timeline">
+  <div class="outer">
+    <div class="card">
+      <div class="info">
+        <h3 class="title">2021 - 2024: Technical University Munich BSc Computer Science</h3>
+       <ul>
+          <li>Expected graduation in 2024</li>
+          <li>Current Grade: 1.6</li>
+          <li>Application Subject: Mathematics </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="info">
+        <h3 class="title">2020 - 2021: Leibniz University Hannover, Lower Saxony Preparatory Foundation</h3>
+      <ul><li>University Entrance Exam, Grade: 1.1</li>
+      <li>German language course</li></ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="info">
+        <h3 class="title">2016 - 2020: Elite High School in Tunisia with focus on Mathematics</h3>
+       <ul><li>Top 10 of the year, Grade: 1.16 (Tunisia)</li>
+      <li>Top of the year in my region (Jendouba)</li>
+    <li>Awarded a Scholarship from the Tunisian Government in cooperation with the DAAD</li></ul>
+      </div>
+    </div>
+</div>
+</div> 
+  </div>
+    <h3 class="section_title">
         <strong> 
           Bachelor of Science Informatics @TUM
         </strong>
-   </h2>
+   </h3>
    <div class="studium_element">
-   <h3>     
+   <h4>     
     Curriculum <i class="fa-solid fa-table-list" fa-fw></i><a href="https://www.in.tum.de/fuer-studierende/bachelor-studiengaenge/informatik/studienplan/studienbeginn-ab-wise-202122/"> <br>( <i class="fa fa-link"></i> Link )
        </a>
-   </h3>
+   </h4>
 </div>
 <div class="cover">
   <button class="left" onclick="showPrevCard()">
@@ -197,92 +278,6 @@
 </div>
 </section>
 
-<!-- About me -->
-<section class="about_me" id="about me">
-    <h1 class="section_title">
-        <strong> About me </strong>
-   </h1>
-   <h4><strong>Who is Rayen Manai ?</strong></h4>
-   <p>I am a Tunisian Student in Germany. Currently I study Computer Science in the sixth Semester at the Technical University of Munich.</p>
-   <h4><strong>Why creating this website ?</strong></h4>
-   <p>To be honest, it has all started when i was watching a youtube video of Chuck KeithNugget (chanel: <a href="https://www.youtube.com/c/NetworkChuck">NetworkChuck </a>) and he said : "Think about all the people that inspired you, the vlogs and the videos you watch, you could be that person for someone else and all it has to be is just one person you help and that's worth it"            So i am willing to share my experience, my opinions, my habits, some of my studying Stuff ...
-       Also this is a small project for me, to practise the basic things i have learned.
-   </p>
-
-   <div class="timeline">
-    <div class="outer">
-      <div class="card">
-        <div class="info">
-          <h3 class="title">2021 - 2024: Technical University Munich BSc Computer Science</h3>
-         <ul>
-            <li>Expected graduation in 2024</li>
-            <li>Current Grade: 1.6</li>
-            <li>Application Subject: Mathematics </li>
-          </ul>
-        </div>
-      </div>
-      <div class="card">
-        <div class="info">
-          <h3 class="title">2020 - 2021: Leibniz University Hannover, Lower Saxony Preparatory Foundation</h3>
-        <ul><li>University Entrance Exam, Grade: 1.1</li>
-        <li>German language course</li></ul>
-        </div>
-      </div>
-      <div class="card">
-        <div class="info">
-          <h3 class="title">2016 - 2020: Elite High School in Tunisia with focus on Mathematics</h3>
-         <ul><li>Top 10 of the year, Grade: 1.16 (Tunisia)</li>
-        <li>Top of the year in my region (Jendouba)</li>
-      <li>Awarded a Scholarship from the Tunisian Government in cooperation with the DAAD</li></ul>
-        </div>
-      </div>
-</div>
-</div>
-
-   
-</section>
-<!-- Experience -->
-<section class="experience" id="Experience">
-  <h1 class="experience_title">
-     <strong>Work Experience</strong>
- </h1>
- <div class="timeline">
-  <div class="outer">
-    <div class="card">
-      <div class="info">
-        <h3 class="title">01/2024 - present: Working Student: Software Developer at adesso SE</h3>
-        <ul>
-          <li>Fullstack development and testing responsibilities within a Scrum methodology framework</li>
-          <li>Completion of various full stack development trainings: Spring Boot, Angular, Docker</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="info">
-        <h3 class="title">06/2023 - 12/2023: Working Student: IT Administration at TAP SG</h3>
-       <ul>
-          <li>IT Support: Troubleshooting and providing technical support</li>
-          <li>Deployment of Security Policies</li>
-          <li>M365 Tenant Administration</li>
-          <li>IT Documentation</li>
-          <li>Creating and managing system permissions</li>
-          <li>Monitoring</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="info">
-        <h3 class="title">10/2022 - 04/2023: Assistant Teacher, Technical University of Munich, Discrete Structures</h3>
-      <ul><li>Weekly tutorials</li>
-        <li>Homework correction</li>
-      <li>Exam correction</li></ul>
-      </div>
-    </div>
-</div>
-</div>
-</section>
 <!-- IT Skills & Projects-->
 <section class="IT_Skills" id="it skills">
     <h1 class="section_title">
@@ -410,6 +405,24 @@
 
     </div>
   </div>
+</section>
+
+<!-- About me -->
+<section class="about_me" id="about me">
+  <div class="about_me_container">
+  <h1 class="section_title">
+      <strong> About me </strong>
+ </h1>
+ <h4><strong> <i class="fa-solid fa-terminal"></i> whoami</strong></h4>
+ <p>Hey! I’m Rayen, a computer science student from Tunisia, currently in my sixth semester at the Technical University of Munich. Living in Germany and diving deep into the world of tech has been an exciting journey filled with challenges, learning, and growth.</p>
+ <h4><strong>Why creating this website ?</strong></h4>
+ <p>It all started with a YouTube video by Chuck Keith (NetworkChuck). He said something that really stuck with me: "You could be that person for someone else, and even if you inspire just one person, it’s worth it."
+
+This website is my way of doing just that—sharing my experiences, habits and insights. It’s also a personal project where I’m putting what I’ve learned into practice. Whether it's coding, study hacks or inspiration, I hope you find something here that resonates with you.
+ </p>
+ <h4>Beyond the Code</h4>
+ <p>Life isn't just about computer screens and algorithms! When I'm not coding, you’ll likely find me at the gym working out, traveling to new places, or watching football games. I’m also a fan of League of Legends. I used to play quite a bit when I was younger, but now I just enjoy chilling and watching the competitions. And of course, I’m always down for a good concert.</p>
+</div> 
 </section>
 
 <!-- footer-->

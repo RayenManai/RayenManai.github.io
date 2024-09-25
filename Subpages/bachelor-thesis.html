@@ -25,13 +25,100 @@
         </div>
         <h3 style="color:bisque;">Evaluation of Methods for Enhancing the Integrity of Web Applications</h3>
         <section id="overview">
-            <h4>Motivation: </h4>
+            <h4>
+                Abstract
+            </h4>
             <p>
+                Ensuring the integrity of web applications is challenging due to the lack of an end-to-end
+integrity guarantee between a Content Owner (entity or institution that produces and
+publishes Content on a Content Host) and a Web Client (end user). This thesis addresses
+vulnerabilities in Content delivery across these entities including the compromise of TLS
+terminating points and Man-in-the-Middle attacks.
+
+We analyze existing solutions, evaluating them based on criteria to identify requirements for a robust solution. We propose a novel design that enhances the approach
+
+of "Web Content Signing with Service Workers" [1] by incorporating Trusted Execution Environments to manage TLS termination and secure the service worker initial
+
+delivery. This design maintains Content integrity from the Content Owner to the Web
+Client and integrates with Content Delivery Networks using Subresource Integrity to
+verify CDN-hosted Content.
+Our proof-of-concept implementation using Caddy as a TEE-hosted server deployed
+within a Katacontainer on an AMD SEV-SNP processor shows minimal performance
+overhead and resilience against the identified attack vectors. Our results indicate that
+our proposed design improves web application integrity while maintaining performance
+efficiency.
             </p>
         </section>
 
         <section id="related work">
             <h4>Related Work: </h4>
+            <ul>
+                <li>
+                 Code-Verify Extension [2]
+                </li>
+                <li>
+                    Isolated Web Apps [3]
+                </li>
+                <li>
+                    Signed Exchanges [4]
+                </li>
+                <li>
+                    Web Application Integrity Transparency [5]
+                </li>
+                <li>
+                    HTTP Message Signatures [6]
+                </li>
+                <li>
+                    Integrating Intel SGX Remote Attestation with Transport Layer Security [7]
+                </li>
+                <li>
+                    Web Content Signing with Service Workers [1]
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h4>
+                Demo:
+            </h4>
+            <video width="320" height="240" controls>
+                <source src="./../Resources/ba-manai-poc.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+              </video
+        </section>
+        <section>
+            <h4>
+             Resources:   
+            </h4> 
+            [1] T. Sutter, K. Lapagna, P. Berlich, M. Rennhard, and F. Germann, “Web content
+signing with service workers”, CoRR, vol. abs/2105.05551, 2021. arXiv: 2105 .
+05551. [Online]. Available: https://arxiv.org/abs/2105.05551. <br> 
+
+[2] Engineering at Meta, Code verify: An open source browser extension for verify-
+ing code authenticity on the web, Accessed: 2024-04-22, 2022. [Online]. Available:
+https://engineering.fb.com/2022/03/10/security/code-verify/.  <br> 
+
+[3] WICG, WICG/isolated-web-apps: Repository for explainers and other documents
+related to the Isolated Web Apps proposal, Accessed: 2024-04-22. [Online]. Avail-
+able: https://github.com/WICG/isolated-web-apps.  <br> 
+
+[4] K. Hempenius and D. Mullins, Signed Exchanges (SXGs) | Articles | web.dev,
+Accessed: 2024-04-22. [Online]. Available: https://web.dev/articles/signed-
+exchanges.  <br> 
+
+[5] D. Meißner, F. Kargl, and B. Erb, “Wait: Protecting the integrity of web applica-
+tions with binary-equivalent transparency”, in The 36th ACM/SIGAPP Sympo-
+sium on Applied Computing, ser. SAC ’21, Virtual Event, Republic of Korea: ACM,
+Mar. 2021, isbn: 978-1-4503-8104-8/21/03. doi: 10.1145/3412841.3442143. [On-
+line]. Available: https://doi.org/10.1145/3412841.3442143.  <br> 
+
+[6] A. Backman, J. Richer, and M. Sporny, HTTP Message Signatures, RFC 9421,
+Feb. 2024. doi: 10 . 17487 / RFC9421. [Online]. Available: https : / / www . rfc -
+editor.org/info/rfc9421.  <br> 
+
+[7] T. Knauth, M. Steiner, S. Chakrabarti, L. Lei, C. Xing, and M. Vij, Integrat-
+ing Remote Attestation with Transport Layer Security, 2019. arXiv: 1801.05863
+[cs.CR]. [Online]. Available: https://arxiv.org/abs/1801.05863.
         </section>
     </main>
 </body>

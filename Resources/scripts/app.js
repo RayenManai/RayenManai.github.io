@@ -15,10 +15,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 let currentCardIndex = 0;
+let currentMasterCardIndex = 0;
 const cards = document.querySelectorAll('.studium_card');
+const masterCards = document.querySelectorAll('.studium_card_master');
+
 
 function showCard(index) {
   cards.forEach((card, i) => {
+    if (i === index) {
+      card.classList.add('active');
+    } else {
+      card.classList.remove('active');
+    }
+  });
+}
+
+function showMasterCard(index) {
+  masterCards.forEach((card, i) => {
     if (i === index) {
       card.classList.add('active');
     } else {
@@ -35,6 +48,16 @@ function showNextCard() {
 function showPrevCard() {
   currentCardIndex = (currentCardIndex - 1 + cards.length) % cards.length;
   showCard(currentCardIndex);
+}
+
+function showNextMasterCard() {
+  currentCardIndex = (currentCardIndex + 1) % masterCards.length;
+  showMasterCard(currentCardIndex);
+}
+
+function showPrevMasterCard() {
+  currentCardIndex = (currentCardIndex - 1 + cards.length) % masterCards.length;
+  showMasterCard(currentCardIndex);
 }
 
 // Initially show the first card

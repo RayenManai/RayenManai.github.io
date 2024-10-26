@@ -157,7 +157,7 @@ background-color: rgb(31, 29, 29);
   margin-right: auto;
 }
 
-.studium_card{
+.studium_card, .studium_card_master{
   height: 400px;
   width: 100%;
 }
@@ -207,12 +207,16 @@ background-color: rgb(31, 29, 29);
 }
 
 .experience{
-    margin: auto;
-    width: 80%;
+  margin: auto;
+  width: 80%;
 }
 
 .section_title{
-      text-align: center;
+  text-align: center;
+}
+.education_title{
+  text-align: center;
+  padding-top: 2rem;
 }
 .experience_title{
   text-align: center;
@@ -524,7 +528,7 @@ grid-area: description;
   font-family: monospace;
 }
 
-.studium_card {
+.studium_card, .studium_card_master {
   height: 400px;
   width: 100%;
 }
@@ -555,7 +559,7 @@ grid-area: description;
   -webkit-overflow-scrolling: touch;
 }
 
-.studium_card {
+.studium_card, .studium_card_master {
   display: none; /* Hide all cards by default */
   border-radius: 8px;
   border: 1px solid rgb(71, 112, 145);
@@ -565,7 +569,7 @@ grid-area: description;
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.studium_card.active {
+.studium_card.active, .studium_card_master.active {
   display: block;
   opacity: 1;
   transform: scale(1);
@@ -616,4 +620,15 @@ button.left, button.right {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+.studium_logo{
+ max-width: fit-content;
+ margin: auto;
+ margin-top: 1rem;
+ img{
+  width: 5rem;
+  height: 5rem;
+ }
+}
+
 

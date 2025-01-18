@@ -1,113 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial scale=1.0">
-        <link rel="stylesheet" href="../CSS/workpage_style.css">
-        <base href="../">
-        <title>Introduction to VCS and Git</title>
-    </head>
-    <body>
-      <header>
-        <nav class="top_bar">
-            <div class="header__nav">
-           <a href="../index.html" id="navbar_logo">Home</a>
-        </header>
-          <div class="body">
-<h1>Introduction to VCS & Git</h1>
-<h3>Introduction</h3>
-<p>Working in IT includes managing information in a lot of different files. Projects you are working on, will always evolve. When managing the changes it is always important to keep track of the historical development of your code for many reasons. For example, when you release a new feature, the chances are high that it shows then some bugs. What you are going to do is trying to fix that quickly without having the enough time for reviewing and testing... A saved copy of your last functional version would save you and give you the needed amount of time and focus to fix things. The Problem is that saving copies manually is exhausting, time consuming and hard to organise. In this blog i will try to bring you the importance of a version control system and show some basics of using Git, which is a skill every programmer is required to know.</p>
-<h2>Before VCS :Linux commands diff &amp; patch</h2>
-<p>Imagine this situation when your friend sends you his code and asks you to make changes to fix it. This exchange can be easily managed using diff and patch.</p>
-<h5>Practical example:</h5>
-<p>we have two simple different C files(test.c and test_modified.c) . To highlight the difference, the command diff can be very useful.</p>
-<figure><img src="Resources/img1.png"   width="422" height="233"/></figure>
-<figure><img src="Resources/img2.png"  width="663" height="85"/></figure>
-<p><strong>Creating and applying the changes :</strong> When you want to make a file with the changes(.diff) and send it your friend you will need to do this command : <strong>diff test.c test_modified.c &gt; test.diff </strong>  and then send the diff file. In order to apply the changes your friend needs to give this command: <strong>patch test.c&lt; test.di</strong></p>
-<figure class="wp-block-image size-large is-resized"><img src="Resources/img3.png"  width="744" height="67"/></figure>
-<h2><strong>What is a VCS ?</strong></h2>
-<p>The commands we have already seen are useful but we won't be using them directly. In fact, here comes the role of a Version control system : it keeps&nbsp;track of the changes that we make to our files, who made them, when and why . It also makes it possible to revert changes and collaborate (by merging changes from different sources)</p>
-<h2>Git : </h2>
-<p>Git is a free open source system available for&nbsp;installation on Unix based platforms, Windows and macOS. &nbsp;Git is now one of the most popular version control systems out there. </p>
-<p>What makes Git special is that unlike some version control systems that are centralized around a single server,&nbsp;Git has a distributed architecture.&nbsp;This means that every person contributing to a repository has full copy of&nbsp;the repository on their own development machines.                                      (+) &nbsp;because the repositories are all local to the computer being used&nbsp;to create the files, most operations can be done really fast.</p>
-<p><strong>For more information </strong>: <a href="https://git-scm.com/doc" data-type="URL" data-id="https://git-scm.com/doc" target="_blank" rel="noreferrer noopener">Git documentation</a></p>
-<p><strong><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" data-type="URL" data-id="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Installing git</a></strong> : if you are running a Linux distribution all you need is to give in the terminal <strong>git --version</strong> to check the current installed version and <strong>sudo apt install git</strong> to get it installed. </p>
-<h2>Git basics : </h2>
-<p>There are in general two ways to start working with git : we can create one from scratch using&nbsp;the <strong>git init</strong> command or we can&nbsp;use the <strong>git clone </strong>command to make a copy of&nbsp;a repository that already exists somewhere else.</p>
-<p>By running git init you initialize &nbsp;an empty git repository&nbsp;in the current directory. To make things clearer we need to go through some key words.</p>
-<p><strong>Git directory</strong> : database for your git project that stores the changes and their history, we won't be working directly on those files, instead we will interact with them using git. So whenever you clone a repository,&nbsp;this git directory is copied to your computer.&nbsp;Whenever you run git init to&nbsp;create a new repository ,&nbsp;a new git directory is initialized.</p>
-<p><strong>The working tree</strong> : the current version of your project, it is like a workbench where you can apply the modifications on your files. This working tree will contain&nbsp;all the files that are currently tracked by Git&nbsp;and any new files that we&nbsp;haven't yet added to the list of track files.</p>
-<p><strong>The staging area</strong> : To make Git track our file,&nbsp;we need to add it to the project using the <strong>git add&nbsp;</strong>command passing the file that we want as a parameter.&nbsp;With that our file is in the staging area.&nbsp;The staging area w is a file maintained by&nbsp;Git that contains all of the information about&nbsp;what files and changes&nbsp;are going to go into your next command.&nbsp;We can use the <strong>git status </strong>command&nbsp;to get some information about&nbsp;the current working tree and&nbsp;changes. When a change is the staging are is, you can get it commited using the command <strong>git commit -m "some message"</strong></p>
-<p><strong>The full cycle of modified,&nbsp;staged and committed</strong> : in other words, we work on modified files in the working tree, git will notice the changes but won't store them until we add them to the staging area, where the changes are ready to be commited Finally by commiting them they will be stored in the database( git directory)</p>
-<h2>A practical example : </h2>
-<figure><img src="Resources/img4.png"/><figcaption>We created a new directory (git-repo) and initialized an empty Git(<strong> git init</strong> )  repository. We can always check the status with <strong>git status</strong>.</figcaption></figure>
-<figure><img src="Resources/img5.png" /><figcaption>We added a new file in this repository. It is now still in the working tree, an  untracked file.</figcaption></figure>
-<figure><img src="Resources/img6.png" /><figcaption>We can add this file to the staging area, macking it tracked by git with the command<strong> git add &lt;file_name&gt;</strong></figcaption></figure>
-<figure><img src="Resources/img7.png"/><figcaption>Next step is to commit this file with a message ( it will be now stored in the database)</figcaption></figure>
-<figure><img src="Resources/img8.png" /><figcaption>Now we will make some modifications on the tracked file and see what changes by giving git status : we will see that the changes we made in our working tree are tracked but not yet staged, as well we will need to do that by git add &lt;file_name&gt; and then make our commit with a message.</figcaption></figure>
-<figure><img src="Resources/img9.png" /><figcaption>Another important command is <strong>git log</strong> which displays the history of the commits : who made them, when and the message ( we will talk about its important next)</figcaption></figure>
-<h3><strong>Skipping the staging area :</strong> </h3>
-<p>staging our changes (with <strong>git add &lt;file_name&gt;</strong>) allows us in fact to stage several changes in one commit, but when we know already that the current made changes are the one we want to commit directly, we can do that with some sort of shortcut <strong>git commit -a -m "some message"</strong>. But notice that this dash a flag only works on tracked files (so it doesn't replace our first git add, instead, it is a shortcut to stage&nbsp;any changes to tracked files and commit them in one step.</p>
-<h2>Importance of a commit message :</h2>
-<p>If you have practised the previous steps, you will notice that you can't make a commit without writing a message, but it doesn't make sense if you write things like "fixed bug" or "first change" because they won't be any helpful for future you or other developers working with you. Give it extra time and write a clear informative message which makes it possible later to understand the context, which changes are made and why: maybe there are some clues you need to understand, some things you want to highlight, this is obviously what commit messages are for.</p>
-<p>To have the ability to write good formated and detailled message, just hit the command <strong>git commit</strong> without (-m "some message") and your default text editor will be opened to let you write your message.</p>
-<h2>Commands to get more information:</h2>
-<ul><li><strong>git log -p</strong>  : it shows the list of the commits made in the current git repository with the actual lines that changed in each commit. This can be very helpful when you are tracking a change that appeared to break things.</li><li><strong>git show &lt;commit ID&gt;</strong> : this will display the information about the given commit </li><li><strong>git log --stat </strong>: gives you some stats about the commit, like which files were changed, how many lines were added or removed.</li><li><strong>git diff </strong>: this is special <strong>for unstaged changes</strong> : working on a new feature can take a lot of time so that you can forget which changes you have made, to check them before committing, this command will display them to you. To see the staged changes, you will need to add     <strong>--staged</strong></li><li><strong>git add -p</strong> : using this flag allows you to review the changes and will ask you whether you want to stage them or not</li></ul>
-<h2>Undoing/ Reverting changes : </h2>
-<p>The ability to undo things and revert changes is one of the most important options provided by a VCS. We will be next talking about several approaches in different situations.</p>
-<p><strong>Before commiting</strong> : if you have made changes to a file,that aren't staged yet and then figured out that you don't want to keep them : <strong>git checkout</strong> <strong>&lt;file_name&gt;</strong> will restore this file to the latest storage (which can be commited or staged)</p>
-<p><strong>Staging area</strong> : after adding changes to the staging area that you want to roll back, you can unstage the changes with <strong>git reset</strong>. it is like the opposite operation of <strong>git add</strong></p>
-<p><strong>Commits</strong> : </p>
-<ul><li><strong>Ammending commits: </strong>let's say that you have made your commit but you have missed a file in your commit, with <strong>git commit --amend</strong> you can take whatever is&nbsp;currently in our staging area and&nbsp;run the git commit&nbsp;workflow to <strong>overwrite</strong> the previous commit. More simply all you need to do is move your fixes to the staging area and then give this command that will make git overwrites your last commit.                                                               If you just want to modify your commit message to add a link or make it more descriptive, you can hit that command directly without adding anything to the staging area and a text editor will be open to moddify the message of the latest commit.</li></ul>
-<p><strong>Warning </strong>: overwriting commits with git commit --amend is okay as long as you are working on your local version of the project that you can push later when things are fixed. But you should avoid amending commits that have been made public. The reason is that this action could lead to confusions because --amend rewrites the git history by removing and replacing the last commit.</p>
-<ul><li><strong>Rollbacks </strong>: If you want to undo the changes you have already commit, you can get use of the <strong>git revert</strong> command. It is important to know that it doesn't mean exactly undo, instead it is about creating a commit that contains the inverse of all the changes in the bad commit (&nbsp;if a particular line was added in the bad commit,&nbsp;then in the reverted one,&nbsp;the same line will be deleted).                                                                 You can revert the latest commit by <strong>git revert HEAD</strong> (an Alias: a pointer to your current commit ) or revert a specific commit by passing its ID instead of head.</li></ul>
-<h2>Branching and merging :</h2>
-<p>Branches are an important part of the git work flow.  A branch is generally a pointer to a particular commit, it represents an independent line of development in a project.</p>
-<p>Remember when we have inisialized an empty git repository, the default created branch is called master, it is mostly used to represent the current working state of our project. That means if you want to try things out working in new feautures without the risk of messing it up with the good working current version, you can create your own branch to work on it and then if you are sure about your work you can merge back into the master branch.</p>
-<h4>Creating and working with Branchs :</h4>
-<p><strong>git branch </strong>: lists the existing branches                                                              <strong>git branch &lt;branch_name&gt;</strong> : creates a new branch                                      <strong>git checkout</strong> <strong>&lt;branch_name&gt;</strong> : switches to that branch                                  <strong>git checkout -b</strong> <strong>&lt;branch_name&gt;</strong> : shortcut to the two last commands : creates a new branch and switches to it                                                           g<strong>it branch -d &lt;branch_name&gt;</strong> : to delete a branch, you can use -D instead if you want to delete it forcibly</p>
-<p>Notice that creating a new branch is very simple because there isn't any data&nbsp;that needs to be copied around. Switching branches is done by updating the working tree to match the selected branch (The HEAD is moved to the relevant commit on the specified branch)</p>
-<h4>Merging :</h4>
-<p>We have already learned that creating new branches is a practical way to work on new features, so once your work is ready it is time for merging back to the main track : combining data and history together. This done with <strong>git merge &lt;branch_name&gt;</strong></p>
-<p> Git uses two different Algorithms to perform a merge depending on the situation. </p>
-<ul><li><strong>fast-forward merge</strong> : this is the case when all the commits&nbsp;in the checked out branch are also in the branch that's being merged. In simple words, between the two points when you created a new branch and started working on it and trying to merge back, you have not made new commits to the checked out branch. All Git has to do is update the pointers of the branches to&nbsp;the same commit</li><li><strong>three-way merge : </strong>this occurs when the history of the merging branches has diverged and there is no more a linear path to combine them. Opposite to what said before, this happens when a commit is made on one branch&nbsp;after the point when both branches split. </li></ul>
-<figure><img src="Resources/img10.jpg"/></figure>
-<h4>Merge CONFLICTS : </h4>
-<p>Merging branches that edit different parts of different or even same files will be done easily, however if you are trying to merge branches that has changes on the same exact parts, git will ask for help to figure out what to do, so that it avoids throwing away one of the changes.</p>
-<p>It's up to you to decide which one to keep&nbsp;or if we should change&nbsp;the contents of the file altogether : you can just open your editor to check it out and save the changes.</p>
-<p>In some other cases it kann be a little messy and you just want to throw the merge and start over : you can hit <strong>git merge --abort</strong> to stop the merge and reset the files in&nbsp;your working tree back to&nbsp;the previous commit before the merge ever happened.&nbsp; </p>
-<h3>Example :</h3>
-<figure><img src="Resources/img11.png"/><figcaption>Creating a new branch, switching to it and creating a new file to commit  </figcaption></figure>
-<figure><img src="Resources/img12.png"/><figcaption>commiting the changes, moving back to the master branch and merging the two branches</figcaption></figure>
-<figure><img src="Resources/img13.png" /><figcaption>in this other example i am creating a new branch called new_version and then applying changes on our little hello world program on the same line from both the new_version and the master branch</figcaption></figure>
-<figure><img src="Resources/img14.png" /><figcaption>The result is obviously a merge conflict </figcaption></figure>
-<figure><img src="Resources/img15.png"/><figcaption> That's what you see when you open the file, git gives you the chance to take the decision and apply the wanted changes and save them</figcaption></figure>
-<figure><img src="Resources/img16.png" /></figure>
-<figure><img src="Resources/img17.png" /><figcaption>I just chose one of the texts and then made the commit. To see the git history i gave <strong>git log --graph --oneline</strong> . You can notice from the graph that it is a three-way merge.</figcaption></figure>
-<h2>Introduction to Remotes &amp; GitHub :</h2>
-<p>Up until now we've seen a lot of interesting techniques on how to use Git locally. We will be next learning new things related to GitHub and remotes. The ability to use remote repositories is what allows us to collaborate with others when working on a project</p>
-<h4>What is GitHub ?</h4>
-<p>GitHub is a web-based Git repository hosting service. It allows us to share and access repositories on the web and clone them to our local computer, so we can work on them.</p>
-<p>To make the idea clear, remember when we mentionned that Git is a distibuted VCS (each contributer has a local copy of the whole repository), but we can host one of the copies on a server and then use it as a remote repository to synchronise the work. GitHub is an online service to host repositories.</p>
-<p>There are other services that offer the same functionality like BitBucket and GitLab.</p>
-<h4>What is a remote ?</h4>
-<p>To understand this, imagine you are working with your teammates on developing a new software, each one of you has its own part to accomplish independently of one another, this can be possible thanks to a central remote repository that is a big part of the distributed nature of Git collaboration. Each member can issue git commands to pull code from the remote or to push to it. So you can always push your changes and pull others to your local copy to combine them and make sure they are compatible.</p>
-<figure><img src="Resources/img18.jpg" /></figure>
-<p>Working with remotes will add some steps to the usual git Workflow : when pulling changes git will merge the changes automatically if possible or will tell us to manually solve conflicts.</p>
-<p>Will still modify stage and commit our local changes. After committing, we'll fetch any new changes from the remote repo manually merge if necessary and only then will push our changes to the remote repo. </p>
-<h4>Useful commands for interaction with GitHub :</h4>
-<p><strong>git clone URL</strong> : to create a local copy of the repository, you need to use the git clone command followed by the url of the repository and you will be asked for your username and password. Now that you have a local copy you can perform all the changes we have already seen.</p>
-<p><strong>git push</strong> : after commiting your changes you can push them  to the remote repo</p>
-<p><strong>git remote :</strong> lists remote repositories. you can use <strong>git remote show &lt;name&gt; </strong>to describe a single remote repo.</p>
-<p>Git uses remote branches to keep copies of the data that's stored in the remote repository. We could have a look at the remote branches that our Git repo is currently tracking by running <strong>git branch -r.</strong></p>
-<p><strong>git remote update :</strong> this fetches the new changes to </p>
-<p><strong>git fetch</strong> : will download remote branches from remote repositories without merging the content with your current workspace automatically, if we are satisfied with the changes we can merge them to the local branch </p>
-<p><strong>git pull</strong> : method of getting remote contents that will automatically merge the remote branch with the current local branch, Assuming no merge conflicts, git pull perform automatically a fast-forward merge</p>
-<p><strong>git push -u origin &lt;new_branch_name&gt;</strong> : this command allows you to push your new branch to the origin repo </p>
-<p><strong>git rebase &lt;branch_name&gt; </strong>: this is another alternative of git merge but with a major difference. &nbsp;Rebasing means changing the base commit that's used for our branch.&nbsp;When we create a new branch, Git knows the latest commits made on both branches, depending on the situation it will do a fast-forward or three-way merge when trying to integrate the changes.</p>
-<p>The problem with three-way merge is that the split history makes it hard to debug and track a problem. The better option is running the command git rebase,&nbsp;followed by the branch that we want to set as the new base : by changing the base where our commits split from the branch history,&nbsp;we can replay the new commits on top of the new base.&nbsp;This allows Git to do a fast forward merge and <strong>keep history linear</strong>.</p>
-<figure><img src="Resources/img19.jpg"/></figure>
-</div>
-    </body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial scale=1.0" />
+    <link rel="stylesheet" href="../CSS/bachelor-thesis-styles.css" />
+    <base href="../" />
+    <title>Introduction to VCS and Git</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="header__nav">
+          <ul>
+            <li><a id="navbar_logo" href="index.html">Home</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1>Introduction to VCS & Git</h1>
+      <h3>Introduction</h3>
+      <p>
+        Working in IT includes managing information in a lot of different files.
+        Projects you are working on, will always evolve. When managing the
+        changes it is always important to keep track of the historical
+        development of your code for many reasons. For example, when you release
+        a new feature, the chances are high that it shows then some bugs. What
+        you are going to do is trying to fix that quickly without having the
+        enough time for reviewing and testing... A saved copy of your last
+        functional version would save you and give you the needed amount of time
+        and focus to fix things. The Problem is that saving copies manually is
+        exhausting, time consuming and hard to organise. In this blog i will try
+        to bring you the importance of a version control system and show some
+        basics of using Git, which is a skill every programmer is required to
+        know.
+      </p>
+      <h2>Before VCS :Linux commands diff &amp; patch</h2>
+      <p>
+        Imagine this situation when your friend sends you his code and asks you
+        to make changes to fix it. This exchange can be easily managed using
+        diff and patch.
+      </p>
+      <h5>Practical example:</h5>
+      <p>
+        we have two simple different C files(test.c and test_modified.c) . To
+        highlight the difference, the command diff can be very useful.
+      </p>
+      <figure><img src="Resources/img1.png" width="422" height="233" /></figure>
+      <figure><img src="Resources/img2.png" width="663" height="85" /></figure>
+      <p>
+        <strong>Creating and applying the changes :</strong> When you want to
+        make a file with the changes(.diff) and send it your friend you will
+        need to do this command :
+        <strong>diff test.c test_modified.c &gt; test.diff </strong> and then
+        send the diff file. In order to apply the changes your friend needs to
+        give this command: <strong>patch test.c&lt; test.di</strong>
+      </p>
+      <figure class="wp-block-image size-large is-resized">
+        <img src="Resources/img3.png" width="744" height="67" />
+      </figure>
+      <h2><strong>What is a VCS ?</strong></h2>
+      <p>
+        The commands we have already seen are useful but we won't be using them
+        directly. In fact, here comes the role of a Version control system : it
+        keeps&nbsp;track of the changes that we make to our files, who made
+        them, when and why . It also makes it possible to revert changes and
+        collaborate (by merging changes from different sources)
+      </p>
+      <h2>Git :</h2>
+      <p>
+        Git is a free open source system available for&nbsp;installation on Unix
+        based platforms, Windows and macOS. &nbsp;Git is now one of the most
+        popular version control systems out there.
+      </p>
+      <p>
+        What makes Git special is that unlike some version control systems that
+        are centralized around a single server,&nbsp;Git has a distributed
+        architecture.&nbsp;This means that every person contributing to a
+        repository has full copy of&nbsp;the repository on their own development
+        machines. (+) &nbsp;because the repositories are all local to the
+        computer being used&nbsp;to create the files, most operations can be
+        done really fast.
+      </p>
+      <p>
+        <strong>For more information </strong>:
+        <a
+          href="https://git-scm.com/doc"
+          data-type="URL"
+          data-id="https://git-scm.com/doc"
+          target="_blank"
+          rel="noreferrer noopener"
+          >Git documentation</a
+        >
+      </p>
+      <p>
+        <strong
+          ><a
+            href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+            data-type="URL"
+            data-id="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"
+            target="_blank"
+            >Installing git</a
+          ></strong
+        >
+        : if you are running a Linux distribution all you need is to give in the
+        terminal <strong>git --version</strong> to check the current installed
+        version and <strong>sudo apt install git</strong> to get it installed.
+      </p>
+      <h2>Git basics :</h2>
+      <p>
+        There are in general two ways to start working with git : we can create
+        one from scratch using&nbsp;the <strong>git init</strong> command or we
+        can&nbsp;use the <strong>git clone </strong>command to make a copy
+        of&nbsp;a repository that already exists somewhere else.
+      </p>
+      <p>
+        By running git init you initialize &nbsp;an empty git repository&nbsp;in
+        the current directory. To make things clearer we need to go through some
+        key words.
+      </p>
+      <p>
+        <strong>Git directory</strong> : database for your git project that
+        stores the changes and their history, we won't be working directly on
+        those files, instead we will interact with them using git. So whenever
+        you clone a repository,&nbsp;this git directory is copied to your
+        computer.&nbsp;Whenever you run git init to&nbsp;create a new repository
+        ,&nbsp;a new git directory is initialized.
+      </p>
+      <p>
+        <strong>The working tree</strong> : the current version of your project,
+        it is like a workbench where you can apply the modifications on your
+        files. This working tree will contain&nbsp;all the files that are
+        currently tracked by Git&nbsp;and any new files that we&nbsp;haven't yet
+        added to the list of track files.
+      </p>
+      <p>
+        <strong>The staging area</strong> : To make Git track our file,&nbsp;we
+        need to add it to the project using the
+        <strong>git add&nbsp;</strong>command passing the file that we want as a
+        parameter.&nbsp;With that our file is in the staging area.&nbsp;The
+        staging area w is a file maintained by&nbsp;Git that contains all of the
+        information about&nbsp;what files and changes&nbsp;are going to go into
+        your next command.&nbsp;We can use the
+        <strong>git status </strong>command&nbsp;to get some information
+        about&nbsp;the current working tree and&nbsp;changes. When a change is
+        the staging are is, you can get it commited using the command
+        <strong>git commit -m "some message"</strong>
+      </p>
+      <p>
+        <strong>The full cycle of modified,&nbsp;staged and committed</strong> :
+        in other words, we work on modified files in the working tree, git will
+        notice the changes but won't store them until we add them to the staging
+        area, where the changes are ready to be commited Finally by commiting
+        them they will be stored in the database( git directory)
+      </p>
+      <h2>A practical example :</h2>
+      <figure>
+        <img src="Resources/img4.png" />
+        <figcaption>
+          We created a new directory (git-repo) and initialized an empty
+          Git(<strong> git init</strong> ) repository. We can always check the
+          status with <strong>git status</strong>.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img5.png" />
+        <figcaption>
+          We added a new file in this repository. It is now still in the working
+          tree, an untracked file.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img6.png" />
+        <figcaption>
+          We can add this file to the staging area, macking it tracked by git
+          with the command<strong> git add &lt;file_name&gt;</strong>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img7.png" />
+        <figcaption>
+          Next step is to commit this file with a message ( it will be now
+          stored in the database)
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img8.png" />
+        <figcaption>
+          Now we will make some modifications on the tracked file and see what
+          changes by giving git status : we will see that the changes we made in
+          our working tree are tracked but not yet staged, as well we will need
+          to do that by git add &lt;file_name&gt; and then make our commit with
+          a message.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img9.png" />
+        <figcaption>
+          Another important command is <strong>git log</strong> which displays
+          the history of the commits : who made them, when and the message ( we
+          will talk about its important next)
+        </figcaption>
+      </figure>
+      <h3><strong>Skipping the staging area :</strong></h3>
+      <p>
+        staging our changes (with <strong>git add &lt;file_name&gt;</strong>)
+        allows us in fact to stage several changes in one commit, but when we
+        know already that the current made changes are the one we want to commit
+        directly, we can do that with some sort of shortcut
+        <strong>git commit -a -m "some message"</strong>. But notice that this
+        dash a flag only works on tracked files (so it doesn't replace our first
+        git add, instead, it is a shortcut to stage&nbsp;any changes to tracked
+        files and commit them in one step.
+      </p>
+      <h2>Importance of a commit message :</h2>
+      <p>
+        If you have practised the previous steps, you will notice that you can't
+        make a commit without writing a message, but it doesn't make sense if
+        you write things like "fixed bug" or "first change" because they won't
+        be any helpful for future you or other developers working with you. Give
+        it extra time and write a clear informative message which makes it
+        possible later to understand the context, which changes are made and
+        why: maybe there are some clues you need to understand, some things you
+        want to highlight, this is obviously what commit messages are for.
+      </p>
+      <p>
+        To have the ability to write good formated and detailled message, just
+        hit the command <strong>git commit</strong> without (-m "some message")
+        and your default text editor will be opened to let you write your
+        message.
+      </p>
+      <h2>Commands to get more information:</h2>
+      <ul>
+        <li>
+          <strong>git log -p</strong> : it shows the list of the commits made in
+          the current git repository with the actual lines that changed in each
+          commit. This can be very helpful when you are tracking a change that
+          appeared to break things.
+        </li>
+        <li>
+          <strong>git show &lt;commit ID&gt;</strong> : this will display the
+          information about the given commit
+        </li>
+        <li>
+          <strong>git log --stat </strong>: gives you some stats about the
+          commit, like which files were changed, how many lines were added or
+          removed.
+        </li>
+        <li>
+          <strong>git diff </strong>: this is special
+          <strong>for unstaged changes</strong> : working on a new feature can
+          take a lot of time so that you can forget which changes you have made,
+          to check them before committing, this command will display them to
+          you. To see the staged changes, you will need to add
+          <strong>--staged</strong>
+        </li>
+        <li>
+          <strong>git add -p</strong> : using this flag allows you to review the
+          changes and will ask you whether you want to stage them or not
+        </li>
+      </ul>
+      <h2>Undoing/ Reverting changes :</h2>
+      <p>
+        The ability to undo things and revert changes is one of the most
+        important options provided by a VCS. We will be next talking about
+        several approaches in different situations.
+      </p>
+      <p>
+        <strong>Before commiting</strong> : if you have made changes to a
+        file,that aren't staged yet and then figured out that you don't want to
+        keep them : <strong>git checkout</strong>
+        <strong>&lt;file_name&gt;</strong> will restore this file to the latest
+        storage (which can be commited or staged)
+      </p>
+      <p>
+        <strong>Staging area</strong> : after adding changes to the staging area
+        that you want to roll back, you can unstage the changes with
+        <strong>git reset</strong>. it is like the opposite operation of
+        <strong>git add</strong>
+      </p>
+      <p><strong>Commits</strong> :</p>
+      <ul>
+        <li>
+          <strong>Ammending commits: </strong>let's say that you have made your
+          commit but you have missed a file in your commit, with
+          <strong>git commit --amend</strong> you can take whatever
+          is&nbsp;currently in our staging area and&nbsp;run the git
+          commit&nbsp;workflow to <strong>overwrite</strong> the previous
+          commit. More simply all you need to do is move your fixes to the
+          staging area and then give this command that will make git overwrites
+          your last commit. If you just want to modify your commit message to
+          add a link or make it more descriptive, you can hit that command
+          directly without adding anything to the staging area and a text editor
+          will be open to moddify the message of the latest commit.
+        </li>
+      </ul>
+      <p>
+        <strong>Warning </strong>: overwriting commits with git commit --amend
+        is okay as long as you are working on your local version of the project
+        that you can push later when things are fixed. But you should avoid
+        amending commits that have been made public. The reason is that this
+        action could lead to confusions because --amend rewrites the git history
+        by removing and replacing the last commit.
+      </p>
+      <ul>
+        <li>
+          <strong>Rollbacks </strong>: If you want to undo the changes you have
+          already commit, you can get use of the
+          <strong>git revert</strong> command. It is important to know that it
+          doesn't mean exactly undo, instead it is about creating a commit that
+          contains the inverse of all the changes in the bad commit (&nbsp;if a
+          particular line was added in the bad commit,&nbsp;then in the reverted
+          one,&nbsp;the same line will be deleted). You can revert the latest
+          commit by <strong>git revert HEAD</strong> (an Alias: a pointer to
+          your current commit ) or revert a specific commit by passing its ID
+          instead of head.
+        </li>
+      </ul>
+      <h2>Branching and merging :</h2>
+      <p>
+        Branches are an important part of the git work flow. A branch is
+        generally a pointer to a particular commit, it represents an independent
+        line of development in a project.
+      </p>
+      <p>
+        Remember when we have inisialized an empty git repository, the default
+        created branch is called master, it is mostly used to represent the
+        current working state of our project. That means if you want to try
+        things out working in new feautures without the risk of messing it up
+        with the good working current version, you can create your own branch to
+        work on it and then if you are sure about your work you can merge back
+        into the master branch.
+      </p>
+      <h4>Creating and working with Branchs :</h4>
+      <p>
+        <strong>git branch </strong>: lists the existing branches
+        <strong>git branch &lt;branch_name&gt;</strong> : creates a new branch
+        <strong>git checkout</strong> <strong>&lt;branch_name&gt;</strong> :
+        switches to that branch <strong>git checkout -b</strong>
+        <strong>&lt;branch_name&gt;</strong> : shortcut to the two last commands
+        : creates a new branch and switches to it g<strong
+          >it branch -d &lt;branch_name&gt;</strong
+        >
+        : to delete a branch, you can use -D instead if you want to delete it
+        forcibly
+      </p>
+      <p>
+        Notice that creating a new branch is very simple because there isn't any
+        data&nbsp;that needs to be copied around. Switching branches is done by
+        updating the working tree to match the selected branch (The HEAD is
+        moved to the relevant commit on the specified branch)
+      </p>
+      <h4>Merging :</h4>
+      <p>
+        We have already learned that creating new branches is a practical way to
+        work on new features, so once your work is ready it is time for merging
+        back to the main track : combining data and history together. This done
+        with <strong>git merge &lt;branch_name&gt;</strong>
+      </p>
+      <p>
+        Git uses two different Algorithms to perform a merge depending on the
+        situation.
+      </p>
+      <ul>
+        <li>
+          <strong>fast-forward merge</strong> : this is the case when all the
+          commits&nbsp;in the checked out branch are also in the branch that's
+          being merged. In simple words, between the two points when you created
+          a new branch and started working on it and trying to merge back, you
+          have not made new commits to the checked out branch. All Git has to do
+          is update the pointers of the branches to&nbsp;the same commit
+        </li>
+        <li>
+          <strong>three-way merge : </strong>this occurs when the history of the
+          merging branches has diverged and there is no more a linear path to
+          combine them. Opposite to what said before, this happens when a commit
+          is made on one branch&nbsp;after the point when both branches split.
+        </li>
+      </ul>
+      <figure><img src="Resources/img10.jpg" /></figure>
+      <h4>Merge CONFLICTS :</h4>
+      <p>
+        Merging branches that edit different parts of different or even same
+        files will be done easily, however if you are trying to merge branches
+        that has changes on the same exact parts, git will ask for help to
+        figure out what to do, so that it avoids throwing away one of the
+        changes.
+      </p>
+      <p>
+        It's up to you to decide which one to keep&nbsp;or if we should
+        change&nbsp;the contents of the file altogether : you can just open your
+        editor to check it out and save the changes.
+      </p>
+      <p>
+        In some other cases it kann be a little messy and you just want to throw
+        the merge and start over : you can hit
+        <strong>git merge --abort</strong> to stop the merge and reset the files
+        in&nbsp;your working tree back to&nbsp;the previous commit before the
+        merge ever happened.&nbsp;
+      </p>
+      <h3>Example :</h3>
+      <figure>
+        <img src="Resources/img11.png" />
+        <figcaption>
+          Creating a new branch, switching to it and creating a new file to
+          commit
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img12.png" />
+        <figcaption>
+          commiting the changes, moving back to the master branch and merging
+          the two branches
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img13.png" />
+        <figcaption>
+          in this other example i am creating a new branch called new_version
+          and then applying changes on our little hello world program on the
+          same line from both the new_version and the master branch
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img14.png" />
+        <figcaption>The result is obviously a merge conflict</figcaption>
+      </figure>
+      <figure>
+        <img src="Resources/img15.png" />
+        <figcaption>
+          That's what you see when you open the file, git gives you the chance
+          to take the decision and apply the wanted changes and save them
+        </figcaption>
+      </figure>
+      <figure><img src="Resources/img16.png" /></figure>
+      <figure>
+        <img src="Resources/img17.png" />
+        <figcaption>
+          I just chose one of the texts and then made the commit. To see the git
+          history i gave <strong>git log --graph --oneline</strong> . You can
+          notice from the graph that it is a three-way merge.
+        </figcaption>
+      </figure>
+      <h2>Introduction to Remotes &amp; GitHub :</h2>
+      <p>
+        Up until now we've seen a lot of interesting techniques on how to use
+        Git locally. We will be next learning new things related to GitHub and
+        remotes. The ability to use remote repositories is what allows us to
+        collaborate with others when working on a project
+      </p>
+      <h4>What is GitHub ?</h4>
+      <p>
+        GitHub is a web-based Git repository hosting service. It allows us to
+        share and access repositories on the web and clone them to our local
+        computer, so we can work on them.
+      </p>
+      <p>
+        To make the idea clear, remember when we mentionned that Git is a
+        distibuted VCS (each contributer has a local copy of the whole
+        repository), but we can host one of the copies on a server and then use
+        it as a remote repository to synchronise the work. GitHub is an online
+        service to host repositories.
+      </p>
+      <p>
+        There are other services that offer the same functionality like
+        BitBucket and GitLab.
+      </p>
+      <h4>What is a remote ?</h4>
+      <p>
+        To understand this, imagine you are working with your teammates on
+        developing a new software, each one of you has its own part to
+        accomplish independently of one another, this can be possible thanks to
+        a central remote repository that is a big part of the distributed nature
+        of Git collaboration. Each member can issue git commands to pull code
+        from the remote or to push to it. So you can always push your changes
+        and pull others to your local copy to combine them and make sure they
+        are compatible.
+      </p>
+      <figure><img src="Resources/img18.jpg" /></figure>
+      <p>
+        Working with remotes will add some steps to the usual git Workflow :
+        when pulling changes git will merge the changes automatically if
+        possible or will tell us to manually solve conflicts.
+      </p>
+      <p>
+        Will still modify stage and commit our local changes. After committing,
+        we'll fetch any new changes from the remote repo manually merge if
+        necessary and only then will push our changes to the remote repo.
+      </p>
+      <h4>Useful commands for interaction with GitHub :</h4>
+      <p>
+        <strong>git clone URL</strong> : to create a local copy of the
+        repository, you need to use the git clone command followed by the url of
+        the repository and you will be asked for your username and password. Now
+        that you have a local copy you can perform all the changes we have
+        already seen.
+      </p>
+      <p>
+        <strong>git push</strong> : after commiting your changes you can push
+        them to the remote repo
+      </p>
+      <p>
+        <strong>git remote :</strong> lists remote repositories. you can use
+        <strong>git remote show &lt;name&gt; </strong>to describe a single
+        remote repo.
+      </p>
+      <p>
+        Git uses remote branches to keep copies of the data that's stored in the
+        remote repository. We could have a look at the remote branches that our
+        Git repo is currently tracking by running
+        <strong>git branch -r.</strong>
+      </p>
+      <p>
+        <strong>git remote update :</strong> this fetches the new changes to
+      </p>
+      <p>
+        <strong>git fetch</strong> : will download remote branches from remote
+        repositories without merging the content with your current workspace
+        automatically, if we are satisfied with the changes we can merge them to
+        the local branch
+      </p>
+      <p>
+        <strong>git pull</strong> : method of getting remote contents that will
+        automatically merge the remote branch with the current local branch,
+        Assuming no merge conflicts, git pull perform automatically a
+        fast-forward merge
+      </p>
+      <p>
+        <strong>git push -u origin &lt;new_branch_name&gt;</strong> : this
+        command allows you to push your new branch to the origin repo
+      </p>
+      <p>
+        <strong>git rebase &lt;branch_name&gt; </strong>: this is another
+        alternative of git merge but with a major difference. &nbsp;Rebasing
+        means changing the base commit that's used for our branch.&nbsp;When we
+        create a new branch, Git knows the latest commits made on both branches,
+        depending on the situation it will do a fast-forward or three-way merge
+        when trying to integrate the changes.
+      </p>
+      <p>
+        The problem with three-way merge is that the split history makes it hard
+        to debug and track a problem. The better option is running the command
+        git rebase,&nbsp;followed by the branch that we want to set as the new
+        base : by changing the base where our commits split from the branch
+        history,&nbsp;we can replay the new commits on top of the new
+        base.&nbsp;This allows Git to do a fast forward merge and
+        <strong>keep history linear</strong>.
+      </p>
+      <figure><img src="Resources/img19.jpg" /></figure>
+    </main>
+  </body>
 </html>

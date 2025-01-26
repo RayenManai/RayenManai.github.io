@@ -348,6 +348,18 @@ footer {
   color: white;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.github-link {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 .workcard:hover {
   transform: translateY(-5px) scale(1.005) translateZ(0);
 }

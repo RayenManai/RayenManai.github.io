@@ -81,7 +81,7 @@ img {
   justify-content: space-between;
   max-width: 1300px;
   margin: 0 auto;
-  min-height: 5vh;
+  min-height: 6vh;
 }
 #navbar_logo {
   display: flex;
@@ -165,7 +165,7 @@ img {
 
   .layout2 {
     margin: auto;
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1cm;
@@ -173,7 +173,7 @@ img {
 
   .container {
     margin: auto;
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1cm;
@@ -349,6 +349,53 @@ footer {
   color: white;
 }
 
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 100%; /* Prevents overflow */
+}
+
+/* Style for arrow buttons */
+.arrow-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  z-index: 10; /* Ensure they appear above content */
+}
+
+/* Position arrows on larger screens */
+.arrow-btn.left {
+  left: -50px; /* Moves it outside the card */
+}
+
+.arrow-btn.right {
+  right: -50px;
+}
+
+/* On small screens, keep arrows closer but outside the project */
+@media (max-width: 1100px) {
+  .arrow-btn.left {
+    left: -30px; /* Moves closer */
+  }
+
+  .arrow-btn.right {
+    right: -30px;
+  }
+}
+
+.arrow-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -517,7 +564,7 @@ footer {
 
   .container {
     margin: auto;
-    width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 1cm;
@@ -584,13 +631,6 @@ button {
   border: none;
   padding: 10px;
   cursor: pointer;
-}
-
-button.left,
-button.right {
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
 }
 
 .intro_title {

@@ -43,7 +43,7 @@
           <ul class="nav_menu">
             <li class="nav_item"><a href="#Experience">Experience</a></li>
             <li class="nav_item"><a href="#Studium">Education</a></li>
-            <li class="nav_item"><a href="#it skills">Skills & Projects</a></li>
+            <li class="nav_item"><a href="#it_skills">Skills & Projects</a></li>
             <li class="nav_item"><a href="#about me">About me</a></li>
             <li class="nav_item"><a href="#socials">Contact</a></li>
             <!-- <li class="nav_item"><a href="#socials">CV</a></li> -->
@@ -236,8 +236,11 @@
         </h4>
       </div>
       <div class="cover">
-        <button class="left" onclick="showPrevMasterCard()">
-          <i class="fas fa-angle-double-left"></i>
+          <button
+          class="arrow-btn left"
+          onclick="showPrevMasterCard()"
+        >
+          &#9664;
         </button>
         <div class="layout">
           <div class="studium_card_master active">
@@ -251,9 +254,17 @@
               Presentation techniques and Authors workshop)
             </h4>
           </div>
+          <div class="studium_card_master">
+            <h4><strong style="color: bisque">2.Semester</strong></h4>
+            <h4>Distributed Systems</h4>
+            <h4>Human-Computer-Interaction</h4>
+            <h4>Testing</h4>
+            <h4>Modelling, Specification and Verification of Reactive Systems</h4>
+            <h4>Soft-Skills : Leadership</h4>
+          </div>
         </div>
-        <button class="right" onclick="showNextMasterCard()">
-          <i class="fas fa-angle-double-right"></i>
+          <button onclick="showNextMasterCard()" class="arrow-btn right">
+            &#9654;
         </button>
       </div>
       <h3 class="education_title">
@@ -270,8 +281,11 @@
         </h4>
       </div>
       <div class="cover">
-        <button class="left" onclick="showPrevCard()">
-          <i class="fas fa-angle-double-left"></i>
+          <button
+          class="arrow-btn left"
+          onclick="showPrevCard()"
+        >
+          &#9664;
         </button>
         <div class="layout">
           <div class="studium_card active">
@@ -335,8 +349,8 @@
             <h4>Introduction to Data Science and Statistical Thinking</h4>
           </div>
         </div>
-        <button class="right" onclick="showNextCard()">
-          <i class="fas fa-angle-double-right"></i>
+        <button onclick="showNextCard()" class="arrow-btn right">
+          &#9654;
         </button>
       </div>
 
@@ -369,7 +383,7 @@
     </section>
 
     <!-- IT Skills & Projects-->
-    <section class="IT_Skills" id="it skills">
+    <section class="IT_Skills" id="it_skills">
       <h1 class="section_title">Skills & Projects</h1>
 
       <div class="layout2">
@@ -464,246 +478,26 @@
           ></i>
         </div>
       </div>
+
       <div class="work">
-        <div class="container">
-          <div class="workcard">
-            <img
-              src="/Resources/home-page-pictures/Git-Icon.png"
-              class="card__image"
-            />
-            <p class="card__name">
-              Introduction to VCS & Git <i class="fa fa-github"></i>
-            </p>
-            <div class="grid-container">
-              <p>
-                I created this article after learning about Git and GitHub on
-                Coursera. It's a simple guide that teaches the basics of version
-                control. Using easy examples, it shows how Git tracks changes in
-                projects. This helps people work together on code efficiently.
-              </p>
-            </div>
-            <div class="button-container">
-              <a href="Subpages/vcs.html" class="read-more">
-                <i class="fa fa-info-circle"></i> Read More
-              </a>
-            </div>
-          </div>
-          <div class="workcard">
-            <img
-              src="/Resources/home-page-pictures/Ferienakademie2022.jpg"
-              alt="Person"
-              class="card__image"
-            />
-            <p class="card__name">Ferienakademie 2022</p>
-            <div class="grid-container">
-              <p>
-                <strong
-                  >Modern Approaches to Optimization and Verification in
-                  Computer Science:
-                </strong>
-                <br />
-                <br />
-                I presented a 30-minute talk on deductive verification. I
-                explained how deductive verification ensures software
-                correctness using formal proofs and logical reasoning. Sharing
-                real examples, I highlighted its importance in enhancing
-                software reliability and contributing to computer science
-                optimization and verification.
-              </p>
-            </div>
-            <div class="button-container">
-              <a
-                href="https://github.com/RayenManai/Deductive-Verification-Talk-Slides"
-                target="_blank"
-                class="github-link"
-                aria-label="GitHub"
-              >
-                <i class="devicon-github-original"></i>
-              </a>
-            </div>
-          </div>
-          <div class="workcard">
-            <img
-              src="/Resources/home-page-pictures/SheppLogan_Phantom.png"
-              class="card__image"
-            />
-            <p class="card__name">Seminar X-ray Computed Tomography</p>
-            <div class="grid-container">
-              <p>
-                I presented a one-hour lesson where I gave an Introduction to
-                X-ray computed tomography and the basic mathematics needed for
-                it. This work is based on the first three chapters of the book
-                Computed Tomography: Algorithms, Insight, and Just Enough Theory
-                by Per Christian Hansen, Jakob Sauer Jorgensen, and William R.B.
-                Lionheart.
-              </p>
-            </div>
-            <div class="button-container">
-              <a
-                href="https://github.com/RayenManai/Seminar-X-ray-CT.git"
-                target="_blank"
-                class="github-link"
-                aria-label="GitHub"
-              >
-                <i class="devicon-github-original"></i>
-              </a>
-            </div>
-          </div>
-          <div class="workcard">
-            <img
-              src="/Resources/home-page-pictures/Ferienakademie2023.jpg"
-              class="card__image"
-            />
-            <p class="card__name">Ferienakademie 2023</p>
-            <div class="grid-container">
-              <p>
-                <strong>Computational Medical Imaging:</strong>
-                <br />
-                <br />
-                I presented a 30-Min Talk about Backpropagation and training
-                Neural Networks. <br />
-                Projects: implementation of an autograd engine(micrograd) /
-                regularized iterative reconstruction for X-ray CT. <br />
-                The course focuses on advanced image processing tasks like
-                tomographic reconstruction and the synergy between deep learning
-                and classical variational methods in medical imaging.
-              </p>
-            </div>
-            <div class="button-container">
-              <a
-                href="https://github.com/RayenManai/Backpropagation-and-training-neural-networks"
-                target="_blank"
-                class="github-link"
-                aria-label="GitHub"
-              >
-                <i class="devicon-github-original"></i>
-              </a>
-            </div>
-          </div>
+          <div class="navigation">
+            <button
+              id="prevBtn"
+              class="arrow-btn left"
+              onclick="prevProjects()"
+            >
+              &#9664;
+            </button>
 
-          <div class="workcard">
-            <img
-              src="/Resources/home-page-pictures/MolSim.png"
-              class="card__image"
-            />
-            <p class="card__name">Developing a Molecular Dynamics Simulation</p>
-            <div class="grid-container">
-              <p>
-                <strong
-                  >Bachelor Practical course PSE Molecular Dynamics:</strong
-                >
-                <br />
-                <br />Particle Representation: Implementation of particle
-                representations. <br />Force Calculation: Algorithms for
-                computing inter-particle forces. <br />Output and Visualization:
-                Output formats and tools for visualizing simulation results.
-                <br />
-                This course specializes in the integration of best practices in
-                software engineering with the focus on optimizing scientific
-                computations for conducting molecular dynamics simulations.
-                <br />
-                <br /><strong style="color: bisque"
-                  >Used Technologies: C++, CMake, CI, GoogleTest, Doxygen,
-                  spdlog, OpenMP</strong
-                >
-              </p>
-            </div>
-            <div class="button-container">
-              <a
-                href="https://github.com/klaramozna/PSEMolDyn_GroupD"
-                target="_blank"
-                class="github-link"
-                aria-label="GitHub"
-              >
-                <i class="devicon-github-original"></i>
-              </a>
-            </div>
-          </div>
-          <div class="workcard">
-            <img
-              src="/Resources/home-page-pictures/vereinfact-logo.png"
-              class="card__image"
-            />
-            <p class="card__name">Platform for NGOs to enhance efficiency</p>
-            <div class="grid-container">
-              <p>
-                <strong>Software Engineering Project</strong>
-                <br />
-                <br />
-                This project is a an extensible platform designed to streamline
-                operations for organizations and communities, offering a modular
-                architecture with extensible plugins and a centralized storage
-                solution. In this MVP we implemented two plugins:
-                <strong>ProtoGen</strong>, an AI-powered tool that automates
-                meeting protocol generation by processing audio recordings into
-                structured documents with speaker diarization and transcription
-                capabilities, and a <strong>Chatbot</strong>, designed to
-                provide quick and verifiable responses to user queries.
-                Together, these plugins exemplify the platform’s ability to
-                simplify complex tasks and boost productivity while remaining
-                user-friendly and customizable.
-              </p>
-            </div>
-            <div class="button-container">
-              <a href="Subpages/vereinfacht-project.html" class="read-more">
-                <i class="fa fa-info-circle"></i> Read More
-              </a>
-              <a
-                href="https://github.com/SoftwareEngineering-WS2025-ARMMS"
-                target="_blank"
-                class="github-link"
-                aria-label="GitHub"
-              >
-                <i class="devicon-github-original"></i>
-              </a>
-            </div>
-          </div>
+            <div class="container" id="projectContainer"></div>
 
-          <div class="workcard">
-            <img
-              src="/Resources/home-page-pictures/votingsystem.png"
-              class="card__image"
-            />
-            <p class="card__name"></p>
-            <div class="grid-container">
-              <p>
-                <strong
-                  >Election Information System
-                  (BundestagswahlInformationssystem)</strong
-                >
-                <br />
-                <br />
-                The Election Information System is a database-driven application
-                designed to enhance the storage, analysis, and presentation of
-                election data. This consists of two applications:
-                <strong>e-Stimme</strong>: supports electronic voting at polling
-                stations, Key features include secure storage and processing of
-                votes and protection against electoral fraud (multiple votes,
-                voting by unauthorized persons, SQL injection, etc.)
-                <strong>votealyze</strong>: offers an intuitive interface for
-                comparing Bundestag election results from 2017 and 2021. Key
-                features include calculation of parliamentary seat distribution
-                adhering to German electoral laws (Sainte-Laguë), comprehensive
-                result analysis and insights with visualizations and filtering
-                options. <br /><br /><strong style="color: bisque"
-                  >Used Technologies: Relational Databases(PostgresSQL, SQL
-                  queries), Python, React</strong
-                >
-              </p>
-            </div>
-            <div class="button-container">
-              <a href="Subpages/election-project.html" class="read-more">
-                <i class="fa fa-info-circle"></i> Read More
-              </a>
-              <a
-                href="https://github.com/RayenManai/BundestagswahlInformationssystem"
-                target="_blank"
-                class="github-link"
-                aria-label="GitHub"
-              >
-                <i class="devicon-github-original"></i>
-              </a>
-            </div>
+            <button
+              id="nextBtn"
+              class="arrow-btn right"
+              onclick="nextProjects()"
+            >
+              &#9654;
+            </button>
           </div>
         </div>
       </div>
@@ -774,4 +568,5 @@
     </footer>
   </body>
   <script src="Resources/scripts/app.js"></script>
+  <script src="Resources/scripts/projects.js"></script>
 </html>

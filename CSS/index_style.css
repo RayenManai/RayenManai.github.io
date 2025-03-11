@@ -81,7 +81,7 @@ img {
   justify-content: space-between;
   max-width: 1300px;
   margin: 0 auto;
-  min-height: 6vh;
+  min-height: 5vh;
 }
 #navbar_logo {
   display: flex;
@@ -104,6 +104,7 @@ img {
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: auto;
   }
 
   .intro_content {
@@ -111,7 +112,7 @@ img {
     grid-template-areas:
       "img title"
       "img subtitle"
-      "img subtitle2"
+      /* "img subtitle2" */
       "img description";
     gap: 1rem;
     width: 60%;
@@ -452,7 +453,7 @@ footer {
     display: table;
   }
   #mobile_menu {
-    position: absolute;
+    position: relative;
     top: 20%;
     right: 5%;
     transform: translate(5%, 20%);
@@ -473,12 +474,9 @@ footer {
   }
   .intro {
     height: 100vh;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 80%;
-    margin: auto;
   }
 
   .intro_content {
@@ -486,7 +484,7 @@ footer {
     grid-template-areas:
       "title"
       "subtitle"
-      "subtitle2"
+      /* "subtitle2" */
       "img"
       "description";
   }

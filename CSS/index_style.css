@@ -112,7 +112,7 @@ img {
     grid-template-areas:
       "img title"
       "img subtitle"
-      /* "img subtitle2" */
+      "img subtitle2"
       "img description";
     gap: 1rem;
     width: 60%;
@@ -531,7 +531,7 @@ footer {
     grid-template-areas:
       "title"
       "subtitle"
-      /* "subtitle2" */
+      "subtitle2"
       "img"
       "description";
   }

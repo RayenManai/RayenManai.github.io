@@ -256,24 +256,48 @@ a {
 .card {
   margin: 0 0 20px 20px;
   padding: 10px;
-  background: #1f2937;
-  color: gray;
   border-radius: 8px;
+  position: relative;
 }
 .card:hover {
   transform: translateY(-5px) scale(1.005) translateZ(0);
 }
 
-/* Information about the timeline */
+.card-header {
+  display: grid;
+  grid-template-areas:
+    "logo title"
+    "logo date";
+  justify-content: left;
+}
+
 .info {
   display: flex;
   flex-direction: column;
   color: rgb(209, 185, 185);
 }
 
-/* Title of the card */
 .title {
   color: white;
+  grid-area: title;
+}
+
+.logo-container {
+  grid-area: logo;
+  width: 80px;
+  margin: 0 1rem;
+}
+
+.logo-container img {
+  width: 68px;
+  height: 68px;
+  border-radius: 4px;
+}
+
+.date-range {
+  grid-area: date;
+  font-size: 0.85rem;
+  color: #ccc;
 }
 
 /* Timeline dot  */
@@ -368,7 +392,6 @@ footer {
   top: 50%;
   transform: translateY(-50%);
   padding: 10px;
-  z-index: 10; /* Ensure they appear above content */
 }
 
 /* Position arrows on larger screens */
@@ -378,6 +401,69 @@ footer {
 
 .arrow-btn.right {
   right: -50px;
+}
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.slider-container h4 {
+  margin: 2rem 2rem;
+}
+
+.slider {
+  position: relative;
+  height: auto;
+}
+
+.slide img {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.navigation button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transform: translateY(-50%);
+  user-select: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.dots {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.dots span {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dots span.active {
+  background-color: #333;
 }
 
 /* On small screens, keep arrows closer but outside the project */
@@ -562,6 +648,17 @@ footer {
     width: 100%;
   }
 
+  .logo-container {
+    width: 50px;
+    margin: 0 0.5rem;
+  }
+
+  .logo-container img {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+  }
+
   .container {
     margin: auto;
     width: 90%;
@@ -582,6 +679,10 @@ footer {
 
   .skill_card {
     margin: 2rem auto;
+  }
+
+  .slide img {
+    width: 80%;
   }
 
   .about_me_container {

@@ -161,12 +161,6 @@ img {
     margin-right: auto;
   }
 
-  .studium_card,
-  .studium_card_master {
-    height: 400px;
-    width: 100%;
-  }
-
   .layout2 {
     margin: auto;
     width: 90%;
@@ -688,11 +682,6 @@ footer {
     font-family: monospace;
   }
 
-  .studium_card,
-  .studium_card_master {
-    height: 400px;
-    width: 100%;
-  }
   .cover {
     width: 100%;
   }
@@ -726,24 +715,6 @@ footer {
   overflow-y: hidden;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-}
-
-.studium_card,
-.studium_card_master {
-  display: none; /* Hide all cards by default */
-  border-radius: 8px;
-  border: 1px solid rgb(71, 112, 145);
-  color: #e0e0e0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.studium_card.active,
-.studium_card_master.active {
-  display: block;
-  opacity: 1;
-  transform: scale(1);
 }
 
 button {
